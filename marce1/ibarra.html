@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        /* body pra q se acomode todo al escritorio de la pantalla */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        @media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+
+    }
+/*hasta aqui para llene todos los espacio del escritorio*/
+        /* Estilos para el encabezado */
+        header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 40px;
+            position: relative;
+        }
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces al pasar el mouse */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="mar.png" alt="Logo" class="logo">
+        <h1 class="title">
+        EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+        </h1>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link" id="inicio" style="color: blue;">INICIO</a>
+            <div class="nav-link " id="servicios">
+                <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+               
+                <div class="sub-links">
+                    <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                    <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                    <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                    <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+                </div>
+            </div>
+            <a href="galeria.html" class="nav-link" id="galeria" style="color: blue;">GALERÍA</a>
+            <div class="nav-link active" id="recorridos">
+                <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+               
+                <div class="sub-links">
+                    <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                    <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                    <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>
+                    <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                    <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                    <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+
+                </div>
+        </nav>
+    </header>
+
+   <style>
+/* Estilos CSS  contenido principal*/
+/* Define la animación para mensaje */
+ /* Aplica la animación a la clase .mensaje-animado La mejor manera de explorar y visitar la ciudad */
+/* Estilos CSS contenido principal */
+/* Define la animación para mensaje */
+@keyframes aparecer {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+.mensaje-animado {
+    opacity: 0; /* Asegura que el texto sea invisible al inicio */
+    transform: translateY(-20px); /* Asegura que el texto esté fuera de la vista al inicio */
+    animation: aparecer 3.5s ease-out 0.5s forwards;
+    text-align: center;
+    color: blue;
+}
+
+/* Define la animación para la imagen */
+@keyframes mover {
+    0% { transform: translateX(-250px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Aplica la animación a la imagen con la clase .imagen-animada */
+/* Aplica la animación a la imagen con la clase .imagen-animada */
+.imagen-animada {
+    width: 400px; /* Cambia este valor al ancho deseado */
+    height: 470px; /* Cambia este valor al alto deseado */
+    animation: mover 2s ease-out forwards;
+    float: right; /* Flotar la imagen a la derecha */
+    margin-left: -200px; /* Espacio entre la imagen y el texto */
+    margin-right: 200px; /* Espacio entre la imagen y el borde derecho */
+
+    margin-top: 10px; /* Ajusta este valor para bajar la imagen */
+
+
+}
+
+/* Contenedor para el texto al lado de la imagen */
+.texto-al-lado {
+    width: 400px; /* Cambia este valor al ancho deseado */
+    height: 500px; /* Cambia este valor al alto deseado */
+    display: flex; /* Utilizar flexbox */
+    align-items: center; /* Centrar verticalmente el contenido */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    text-align: justify; /* Justificar el texto */
+    
+}
+
+/* Estilo para la nueva imagen2 */
+.imagen-n {
+    width: 400px; /* Cambia este valor al ancho deseado */
+    height: 400px; /* Cambia este valor al alto deseado */
+    animation: mover 2s ease-out forwards;
+    float: right; /* Flotar la imagen a la derecha */
+    margin-left: -200px; /* Espacio entre la imagen y el texto */
+    margin-right: 200px; /* Espacio entre la imagen y el borde derecho */
+    margin-top: 75px; /* Ajusta esta propiedad para bajar la imagen */
+}
+
+/* Estilo para el mensaje "Laguna Yahuarcocha" */
+#men {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Centrar el texto horizontalmente */
+    left: 55%; /* Mover el texto hacia la derecha */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: -150px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+}
+
+        /* estilo para nueva text 2 */
+
+.text {
+    width: 400px; /* Cambia este valor al ancho deseado */
+    height: 500px; /* Cambia este valor al alto deseado */
+    display: flex; /* Utilizar flexbox */
+    align-items: center; /* Centrar verticalmente el contenido */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    text-align: justify; /* Justificar el texto */
+}
+        /* estilo para 3 carrusel*/
+                /* estilo para laguna coulbiche*/
+
+        #menn {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Centrar el texto horizontalmente */
+    left: 55%; /* Mover el texto hacia la derecha */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: -150px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+}
+                /* estilo para laguna Chinchivi*/
+
+                #mennn {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Centrar el texto horizontalmente */
+    left: 55%; /* Mover el texto hacia la derecha */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: -150px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+}
+  /* estilo para lita*/
+
+  #mennnn {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Centrar el texto horizontalmente */
+    left: 55%; /* Mover el texto hacia la derecha */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: -150px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+}
+/* estilo para lomas corazon*/
+
+#mennnnn {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Centrar el texto horizontalmente */
+    left: 55%; /* Mover el texto hacia la derecha */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: -150px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+}
+
+/* estilo para lomas guaya*/
+
+#mennnnnn {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Centrar el texto horizontalmente */
+    left: 55%; /* Mover el texto hacia la derecha */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 100%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: -150px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+}
+
+        /* estilo para nueva flecha  y puntos carrusel*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+ /* estilo puntos carrusel*/
+/* Estilos para los puntos del carrusel  y adelante y atras flechas*/
+.puntos {
+
+    position: absolute; /* Añade posición absoluta para facilitar el ajuste */
+    top: 725px; /* Ajusta la distancia desde el borde superior */
+    left: 55%; /* Centra horizontalmente los puntos */
+    transform: translateX(-50%); /* Centra horizontalmente los puntos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.puntos p {
+    font-size: 70px; /* Tamaño de fuente ajustado */
+    font-weight: bold;
+    margin: 0 5px; /* Margen ajustado para separar los puntos */
+    color: rgb(75, 4, 4);
+}
+
+.puntos .bold {
+    color: #5E17EB; /* Color ajustado para los puntos activos */
+}
+/* Estilos para los puntos del carrusel */
+.numero-punto {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px; /* Ancho del círculo */
+    height: 15px; /* Altura del círculo */
+    border-radius: 50%; /* Esto hace que los números se vean como círculos */
+    background-color: #FFFFFF; /* Color de fondo de los círculos */
+    margin: 0 0px; /* Espacio entre los números */
+    font-size: 10px; /* Tamaño del texto dentro del círculo */
+    border: 2px solid transparent; /* Borde transparente inicial */
+
+}
+.numero-punto-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+.numero-punto:first-child:before {
+    content: '';
+    position: absolute;
+    left: 100%; /* Ajusta la posición horizontal del centro de la barra izquierda */
+    top: 10px; /* Ajusta la posición vertical de la barra izquierda */
+    transform: translateY(-50%) rotate(-0deg); /* Rotar la barra izquierda */
+    width: 40%; /* Ancho de la barra izquierda */
+    height: 4px; /* Altura de la barra izquierda */
+    background-color: black; /* Color de la barra izquierda */
+    
+}
+
+.numero-punto:last-child:after {
+    content: '';
+    position: absolute;
+    right: -1000%; /* Ajusta la posición horizontal del centro de la barra derecha */
+    top: 10px; /* Ajusta la posición vertical de la barra derecha */
+    left: -40%; /* Ajusta la posición horizontal del centro de la barra izquierda */
+    transform: translateY(-50%) rotate(-0deg); /* Rotar la barra derecha */
+    width: 40%; /* Ancho de la barra derecha */
+    height: 4px; /* Altura de la barra derecha */
+    background-color: black; /* Color de la barra derecha */
+}
+
+/* Ocultar el botón de la barra de desplazamiento vertical */
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+/* Ocultar el botón de la barra de desplazamiento horizontal */
+::-webkit-scrollbar-button:horizontal {
+    display: none;
+}
+
+/* Estilos para las flechas */
+.atras {
+    position: absolute;
+    top: 62%; /* Ajusta el valor para bajar las flechas */
+    left: 250px; /* Ajusta la distancia desde el borde izquierdo */
+    right: auto; /* Restablece la propiedad right */
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+
+.adelante {
+    position: absolute;
+    top: 62%; /* Ajusta el valor para bajar las flechas */
+    right: 70px; /* Ajusta la distancia desde el borde derecho */
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+/* Estilos para la lista  iteam personalizada de culviche*/
+.custom-list-container {
+        float: right; /* Mueve el contenedor a la derecha */
+        margin-top: -250px; /* Sube el contenedor 20px para superponerlo ligeramente al texto */
+        margin-right: 810px; /* Mueve todo el texto hacia la izquierda */
+
+    }
+
+    .custom-list {
+        list-style-type: none; /* Elimina cualquier estilo de marcador */
+    }
+
+    .custom-list li::before {
+        content: "\2022"; /* Código del punto Unicode */
+        margin-right: 8px; /* Ajuste el espaciado entre el punto y el texto según lo desees */
+    }
+
+
+/* Estilos para la lista  iteam personalizada de yahuar */
+
+.custom-list-contain {
+        float: right; /* Mueve el contenedor a la derecha */
+        margin-top: -155px; /* Sube el contenedor 20px para superponerlo ligeramente al texto */
+        margin-right: 950px; /* Mueve todo el texto hacia la izquierda */
+
+    }
+
+    .custom-lista {
+        list-style-type: none; /* Elimina cualquier estilo de marcador */
+    }
+
+    .custom-lista li::before {
+        content: "\2022"; /* Código del punto Unicode */
+        margin-right: 8px; /* Ajuste el espaciado entre el punto y el texto según lo desees */
+    }
+/*estilo par subir culviche*/
+#carrusel3 .text p {
+    margin-top: -60px; /* Ajusta este valor según sea necesario para subir el texto */
+}
+
+ /* Estilos para los enlaces de navegación no se oculte por culpa de la imagen animada */
+ .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+
+.texto-ciudad-blanca {
+    color: red; /* Color rojo */
+    font-family: 'Kunstler Script'; /* Fuente Pacifico con fuente de respaldo cursive */
+    font-size: 35px; /* Tamaño de la fuente */
+    margin-left: 15px; /* Margen izquierdo para mover el texto hacia la derecha */
+    margin-top: 550px; /* Margen superior para mover el texto hacia abajo */
+    position: absolute; /* Posición absoluta para que la imagen no afecte al botón o afecte al texto o fuente */
+    font-weight: bold; /* Establece el texto en negrita */
+    
+
+}
+
+    </style>
+<!-- Aquí puedes agregar más contenido si lo deseas -->
+<body>
+    <p class="texto-ciudad-blanca">Ibarra  Ciudad  Blanca</p>
+
+     <!-- Contenido HTML para contenido principal -->
+     <h2 id="mensaje" class="mensaje-animado">
+        LA MEJOR MANERA DE CONOCER Y DISFRUTAR DE IBARRA ES EXPLORANDO SUS ATRACTIVOS
+    </h2>
+
+    <div id="carrusel1" class="carrusel">
+        <img src="i1.jpg" alt="Descripción de la imagen" class="imagen-animada" id="imagen1" loading="lazy">
+        <div class="texto-al-lado">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                Ibarra, un lugar con una posición geográfica privilegiada, ofrece biodiversidad, paisajes ecológicos y vida silvestre. Perfecta para deportes al aire libre y para explorar tradiciones y cultura del norte de Ecuador. 
+                <br>Conocida como la ciudad blanca por sus construcciones y su clima primaveral, Ibarra sorprende con su mezcla de culturas, creadoras de arte en música, danza y tallados. Un destino espléndido para visitar
+            </p>
+        </div>
+    </div>
+
+   <div id="carrusel2" class="carrusel" style="display: none;">
+        <h3 id="men" class="mensaje-an">LAGUNA DE YAHUARCOCHA</h3>
+        <img src="ya.jpg" alt="Descripción de la imagen" class="imagen-n" id="imagen2" loading="lazy">
+        <div class="text">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                Yahuarcocha, que significa "Lago de Sangre" en quichua, es una laguna de origen glaciar ubicada a 3 km de Ibarra, Ecuador, donde se llevó a cabo la batalla entre Incas y Caranquis.
+                <br> Esta laguna, rodeada de lomas y miradores naturales, se ha convertido en un atractivo turístico por su belleza natural, flora, fauna y la organización de competencias automovilísticas internacionales. Además, su entorno está marcado por cultivos, fincas y terrenos indígenas, enmarcados por la cordillera de Angochagua.
+            </p>
+           
+        </div>
+        <div class="custom-list-contain">
+            <ol type="none" class="custom-lista">
+                <li> Atractivos turísticos </li>
+                <li> Tolas de Socapamba </li>
+                <li> Yahuarcocha autódromo </li>
+                <li> Pesca tradicional </li>
+                <li> Paseo en canoa </li>
+            </ol>
+        </div>
+       
+    </div>
+    
+    <div id="carrusel3" class="carrusel" style="display: none;">
+        <h3 id="menn" class="mensaje-an">LAGUNA DE CULBICHE </h3>
+        <img src="culviche.jpg" alt="Descripción de la imagen" class="imagen-n" id="imagen3" loading="lazy">
+        <div class="text">
+            <!-- Texto al lado de la imagen -->
+            <p style="margin-top: -100px;">
+
+                La Laguna Cubilche en Paniquinrra, La Esperanza, es de origen volcánico y circular, sin afluente externo. Su abastecimiento es interno, con un diámetro de 30 metros. En su cima, un cráter alberga cuatro lagunas, dos permanentes y dos estacionales.
+            </p>
+        </div>
+
+        <div class="custom-list-container">
+            <ol type="none" class="custom-list">
+                <li> Desde allí se aprecian la Laguna de San Pablo.</li>
+                <li> El cerro de San Francisco </li>
+                <li> El Nudo de Mojanda </li>
+                <li> El valle de Ibarra </li>
+                <li> La Laguna de Yahuarcocha</li>
+                <li> El nevado Cayambe  </li>
+                <li> El valle de Zuleta   </li>
+                <li> El cerro Imbabura al oeste.    </li>
+
+            </ol>
+        </div>
+       </div>
+
+    <div id="carrusel4" class="carrusel" style="display: none;">
+        <h3 id="mennn" class="mensaje-an">LAGUNA DE CHINCHIVI </h3>
+        <img src="chinchivi.jpg" alt="Descripción de la imagen" class="imagen-n" id="imagen4" loading="lazy">
+        <div class="text">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                La Laguna Cubilche en La Esperanza es una belleza natural, ideal para camping, senderismo, fotografía y trekking. 
+                Hay dos rutas para llegar: la primera, desde Ibarra vía Buenos Aires a las comunidades La Primavera, San José, hasta la Hacienda Chinchiví. 
+                La segunda, desde Urcuquí a la parroquia de San Blas, comunidad de Iruguincho, hasta la Hacienda Chinchiví, pasando por la zona de amortiguamiento de la Reserva Cotacachi Cayapas. 
+                El recorrido, perfecto para todo terreno, dura aproximadamente 3 horas.        </p>
+        </div>
+    </div>
+
+
+    <div id="carrusel5" class="carrusel" style="display: none;">
+        <h3 id="mennnn" class="mensaje-an">RÍO LITA </h3>
+        <img src="lita.jpg" alt="Descripción de la imagen" class="imagen-n" id="imagen5" loading="lazy">
+        <div class="text">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                El Río Lita, nacido en Cotacachi, recorre 42 km antes de unirse al Río Mira en la Bocana de Lita, lugar de recreación. Con ancho variable y clima templado seco, alberga una rica flora y fauna. Actividades turísticas incluyen interpretación ambiental, observación de aves, caminatas, rafting y pesca. 
+                <br>La Bocana, punto de unión de los ríos Mira y Lita, es un atractivo para fotografía y pesca, además de servir como entrada al bosque húmedo de Carchi, Esmeraldas e Imbabura.        
+        </div>
+    </div>
+
+    <div id="carrusel6" class="carrusel" style="display: none;">
+        <h3 id="mennnnn" class="mensaje-an">MIRADOR LOMA DE CORAZÓN
+        </h3>
+        <img src="corazon.jpg" alt="Descripción de la imagen" class="imagen-n" id="imagen6" loading="lazy">
+        <div class="text">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                La Loma Corazón, ubicada al este de Ambuquí, Ibarra,ubicado en la cordillera de los Andes, a 1500 msnm de altitud y en la hoya del Valle del Chota, ofrece vistas panorámicas del casco urbano de Ambuquí y parte de La Playa.
+              <br>   Disfruta de un clima cálido seco, con sol radiante de 7 am a 5 pm, lo que lo convierte en un lugar ideal para fotografías y avistamiento de la "mujer dormida" en la cima de la montaña.
+                </p>    
+        </div>
+    </div>
+
+
+    <div id="carrusel7" class="carrusel" style="display: none;">
+        <h3 id="mennnnnn" class="mensaje-an">BOSQUE  LOMA GUAYABILLAS
+
+        </h3>
+        <img src="guay.jpg" alt="Descripción de la imagen" class="imagen-n" id="imagen7" loading="lazy">
+        <div class="text">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                El Bosque de Guayabillas, parte integral de la identidad natural e histórica de Ibarra, ofrece senderos, infraestructura y paraderos para disfrutar de vistas panorámicas y conocer el Centro de Manejo de Vida Silvestre y los arbustos de Guayabillas, únicos en la zona. Con una extensión de 54.1 hectáreas, 4.6 en comodato para CACMU, es uno de los parques urbanos más grandes del país. Su clima moderado permite disfrutarlo todo el año con una temperatura promedio de 17°C y se encuentra adyacente al sureste de la ciudad de Ibarra. 
+                <br>La adquisición de la Loma de Guayabillas por el alcalde de entonces buscaba satisfacer las necesidades de recreación y tiempo libre de los habitantes, así como convertirse en un atractivo turístico local e internacional.
+                </p>    
+        </div>
+    </div>
+
+    <!-- Flechas del carrusel -->
+    <div class="atras">
+        <img id="atras" src="atras.svg" alt="atras" loading="lazy">
+    </div>
+    
+    <!-- Flecha de adelante -->
+    <div class="adelante">
+        <img id="adelante" src="adelante.svg" alt="adelante" loading="lazy">
+    </div>
+</div>
+
+<div class="puntos"  >
+    <button class="numero-punto-button" onclick="cambiarCarrusel(1)"><span class="numero-punto">1</span></button>
+    <button class="numero-punto-button" onclick="cambiarCarrusel(2)"><span class="numero-punto">2</span></button>
+    <button class="numero-punto-button" onclick="cambiarCarrusel(3)"><span class="numero-punto">3</span></button>
+    <button class="numero-punto-button" onclick="cambiarCarrusel(4)"><span class="numero-punto">4</span></button>
+    <button class="numero-punto-button" onclick="cambiarCarrusel(5)"><span class="numero-punto">5</span></button>
+    <button class="numero-punto-button" onclick="cambiarCarrusel(6)"><span class="numero-punto">6</span></button>
+    <button class="numero-punto-button" onclick="cambiarCarrusel(7)"><span class="numero-punto">7</span></button>
+</div>
+
+
+
+
+    <!-- JavaScript u otros elementos ,botones para adelante atras -->
+</body>
+
+
+<script> 
+/*carrusel estilo*/   
+    let carrusel1 = document.getElementById('carrusel1');
+    let carrusel2 = document.getElementById('carrusel2');
+    let carrusel3 = document.getElementById('carrusel3');
+    let carrusel4 = document.getElementById('carrusel4');
+    let carrusel5 = document.getElementById('carrusel5');
+    let carrusel6 = document.getElementById('carrusel6');
+    let carrusel7 = document.getElementById('carrusel7');
+
+
+    let adelante = document.getElementById('adelante');
+    let atras = document.getElementById('atras');
+    let puntos = document.getElementById('puntos');
+    
+    adelante.addEventListener('click', function(){
+    if (carrusel1.style.display !== "none") {
+        carrusel1.style.display = "none";
+        carrusel2.style.display = "block";
+        actualizarPuntos(2); // Actualizar los puntos para el carrusel 2
+    } else if (carrusel2.style.display !== "none") {
+        carrusel2.style.display = "none";
+        carrusel3.style.display = "block";
+        actualizarPuntos(3); // Actualizar los puntos para el carrusel 3
+    } else if (carrusel3.style.display !== "none") {
+        carrusel3.style.display = "none";
+        carrusel4.style.display = "block";
+        actualizarPuntos(4); // Actualizar los puntos para el carrusel 4
+    } else if (carrusel4.style.display !== "none") {
+        carrusel4.style.display = "none";
+        carrusel5.style.display = "block";
+        actualizarPuntos(5); // Actualizar los puntos para el carrusel 5
+    } else if (carrusel5.style.display !== "none") {
+        carrusel5.style.display = "none";
+        carrusel6.style.display = "block";
+        actualizarPuntos(6); // Actualizar los puntos para el carrusel 6
+    } else if (carrusel6.style.display !== "none") {
+        carrusel6.style.display = "none";
+        carrusel7.style.display = "block";
+        actualizarPuntos(7); // Actualizar los puntos para el carrusel 7
+    } else {
+        // Puedes agregar alguna acción aquí si deseas hacer algo específico en otros casos
+    }
+});
+
+
+atras.addEventListener('click', function(){
+    if (carrusel2.style.display !== "none") {
+        carrusel2.style.display = "none";
+        carrusel1.style.display = "block";
+        actualizarPuntos(1); // Actualizar los puntos para el carrusel 1
+    } else if (carrusel3.style.display !== "none") {
+        carrusel3.style.display = "none";
+        carrusel2.style.display = "block";
+        actualizarPuntos(2); // Actualizar los puntos para el carrusel 2
+    } else if (carrusel4.style.display !== "none") {
+        carrusel4.style.display = "none";
+        carrusel3.style.display = "block";
+        actualizarPuntos(3); // Actualizar los puntos para el carrusel 3
+    } else if (carrusel5.style.display !== "none") {
+        carrusel5.style.display = "none";
+        carrusel4.style.display = "block";
+        actualizarPuntos(4); // Actualizar los puntos para el carrusel 4
+    } else if (carrusel6.style.display !== "none") {
+        carrusel6.style.display = "none";
+        carrusel5.style.display = "block";
+        actualizarPuntos(5); // Actualizar los puntos para el carrusel 5
+    } else if (carrusel7.style.display !== "none") {
+        carrusel7.style.display = "none";
+        carrusel6.style.display = "block";
+        actualizarPuntos(6); // Actualizar los puntos para el carrusel 6
+    }
+});
+
+// Dentro de tu script JavaScript
+/*puntos*/
+
+function inicializarPuntos() {
+    for (let i = 0; i < 7; i++) { // Cambia 7 al número total de carruseles
+        let punto = document.createElement('p');
+        punto.textContent = i + 1; // Agrega el número correspondiente al punto
+        punto.classList.add('numero-punto'); // Agrega la clase para dar estilo al número
+        puntos.appendChild(punto);
+    }
+}
+
+
+
+inicializarPuntos();
+function actualizarPuntos(carruselActivo) {
+    let puntosAntiguos = document.querySelectorAll('.puntos p');
+    puntosAntiguos.forEach(function(punto) {
+        punto.classList.remove('bold');
+        punto.style.color = 'rgb(75, 4, 4)'; // Cambiar el color a grises
+    });
+
+    let puntoActivo = document.querySelectorAll('.puntos p')[carruselActivo - 1]; // Restar 1 porque los índices comienzan desde 0
+    puntoActivo.classList.add('bold');
+    puntoActivo.style.color = '#5E17EB'; // Cambiar el color del punto activo
+}
+function actualizarPuntos(carruselActivo) {
+    let puntosAntiguos = document.querySelectorAll('.puntos .numero-punto');
+    puntosAntiguos.forEach(function(punto) {
+        punto.classList.remove('bold');
+        punto.style.color = 'rgb(75, 4, 4)'; // Cambiar el color a grises
+        punto.style.borderColor = 'transparent'; // Restablecer el color del borde a transparente
+    });
+
+    let puntoActivo = puntosAntiguos[carruselActivo - 1]; // Restar 1 porque los índices comienzan desde 0
+    puntoActivo.classList.add('bold');
+    puntoActivo.style.color = '#5E17EB'; // Cambiar el color del punto activo
+    puntoActivo.style.borderColor = 'red'; // Agregar borde rojo al punto activo
+}
+function cambiarCarrusel(numeroCarrusel) {
+    // Ocultar todos los carruseles
+    document.querySelectorAll('.carrusel').forEach(carrusel => {
+        carrusel.style.display = 'none';
+    });
+
+    // Mostrar el carrusel correspondiente al número
+    document.getElementById('carrusel' + numeroCarrusel).style.display = 'block';
+
+    // Actualizar el estado de los puntos
+    actualizarPuntos(numeroCarrusel);
+}
+    </script>
+
+<!-- whatsap  -->
+    <!-- Contenido principal -->
+
+        <!-- Contenido principal -->
+        <div class="nav-bottom">
+            <div class="popup-whatsapp fadeIn">
+                <div class="content-whatsapp -top">
+                    <button type="button" class="closePopup">
+                        <i class="material-icons icon-font-color">close</i>
+                    </button> 
+                    <p style="display: inline-block;">
+                        <img src="secretary.png" width="50" style="vertical-align: middle;">
+                        <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+                    </p>
+                </div>
+                <div class="content-whatsapp -bottom">
+                    <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                    <button class="send-msPopup" id="send-btn" type="button">
+                        <i class="material-icons icon-font-color--black">send</i>
+                    </button>
+                </div>
+            </div>
+            <button type="button" id="whats-openPopup" class="whatsapp-button">
+                <div class="float">
+                    <i class="fa fa-whatsapp my-float"></i>
+                </div>
+            </button>
+            <div class="circle-anime"></div>
+        </div>
+        
+        <script>
+            // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+            document.getElementById('whats-openPopup').addEventListener('click', function() {
+                document.querySelector('.popup-whatsapp').style.display = 'block';
+            });
+        
+            // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+            document.querySelector('.closePopup').addEventListener('click', function() {
+                document.querySelector('.popup-whatsapp').style.display = 'none';
+            });
+        
+            // Enviar mensaje al hacer clic en el botón de enviar
+            document.querySelector('.send-msPopup').addEventListener('click', function() {
+                var message = document.getElementById('whats-in').value;
+                var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+        
+                // Verificar si se ha ingresado un mensaje
+                if (message.trim() === '') {
+                    // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+                    window.open('https://wa.me/' + phoneNumber);
+                } else {
+                    // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+                    window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+                }
+            });
+        </script>
+        
+        
+<style> 
+
+
+    /*  css Estilos vista 2 */
+
+/* Estilos para el encabezado titulo dos  */
+header {
+            margin-bottom: 20px; /* Ajusta la distancia entre el encabezado y el resto del contenido */
+            background-color: #f0f0f0; /* Color de fondo del encabezado */
+            padding: 10px; /* Añade un espacio interno alrededor del encabezado */
+        }
+
+        h2 {
+            margin-top: 50px; /* Ajusta la distancia entre la parte superior del título y el encabezado */
+            text-align: center; /* Centra el texto */
+            color: blue; /* Cambia "blue" al color que desees */
+        }
+/* Estilos para el carrusel dos bulevar  */
+   
+
+#m {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Mover el texto hacia la izquierda */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 10%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: 450px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+    white-space: nowrap; /* Evitar que el texto se divida en múltiples líneas */
+}
+/* Estilos para  imagen2 */
+.imagen-animadaa{
+    width: 400px; /* Cambia este valor al ancho deseado */
+    height: 400px; /* Cambia este valor al alto deseado */
+    animation: mover 2s ease-out forwards;
+    float: right; /* Flotar la imagen a la derecha */
+    margin-left: -200px; /* Espacio entre la imagen y el texto */
+    margin-right: 200px; /* Espacio entre la imagen y el borde derecho */
+    margin-top: 75px; /* Ajusta esta propiedad para bajar la imagen */
+}
+/* Estilos para las flechas */
+.atrass {
+    position: absolute;
+    top: 130%; /* Ajusta el valor para bajar las flechas */
+    left: 250px; /* Ajusta la distancia desde el borde izquierdo */
+    right: auto; /* Restablece la propiedad right */
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+
+.adelantee {
+    position: absolute;
+    top: 130%; /* Ajusta el valor para bajar las flechas */
+    right: 70px; /* Ajusta la distancia desde el borde derecho */
+    transform: translateY(-50%);
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+}
+
+#m2 {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Mover el texto hacia la izquierda */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 10%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: 450px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+    white-space: nowrap; /* Evitar que el texto se divida en múltiples líneas */
+}
+#m3 {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Mover el texto hacia la izquierda */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 10%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: 450px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+    white-space: nowrap; /* Evitar que el texto se divida en múltiples líneas */
+}
+#m4 {
+    text-align: center; /* Centrar el texto horizontalmente */
+    position: absolute; /* Posición absoluta para superponer el texto */
+    top: 50%; /* Colocar el texto en el centro vertical */
+    left: 50%; /* Mover el texto hacia la izquierda */
+
+    transform: translate(-50%, -50%); /* Ajustar la posición para centrar completamente */
+    width: 10%; /* Ocupar todo el ancho disponible */
+    color: blue; /* Color del texto */
+    z-index: 1; /* Asegurarse de que el texto esté sobre la imagen */
+    margin-top: 450px; /* Ajusta esta propiedad para bajar el texto */
+    font-size: 24px; /* Ajustar el tamaño de la letra */
+    white-space: nowrap; /* Evitar que el texto se divida en múltiples líneas */
+}
+/* Estilos para la lista  iteam personalizada de culviche*/
+/* Estilos para los botones de puntos */
+
+#barra-horizontal {
+    width: 80px; /* Ancho de la barra */
+    height: 4px; /* Altura de la barra */
+    background-color: #666; /* Color de la barra */
+    margin-left: 450px; /* Espacio entre la barra y los botones */
+    margin-top: -9px; 
+    margin-left: 430px; /* Mover hacia la izquierda */
+
+}
+
+/* Estilos para los botones de puntos */
+.nuumero-puntoo {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%; /* Hacer los botones redondos */
+    background-color: white; /* Color de fondo del botón */
+    color: white; /* Color blanco para los números */
+    border: 2px solid black; /* Borde negro para el círculo */
+    margin: 0 -290px; /* Margen entre los botones */
+    cursor: pointer;
+    margin-left: 300px; /* Mover hacia la izquierda */
+    content: "0"; /* Eliminar el contenido dentro del botón */
+
+}
+
+/* Estilo para el botón activo */
+.nuumero-puntoo.bold {
+    border-color: red; /* Borde rojo cuando esté activo */
+}
+.ver-mas-btn {
+    background: none; /* Elimina el fondo */
+    border: none; /* Elimina el borde */
+    color: #666; /* Color del texto */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    font-size: 15px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    transition: color 0.3s; /* Animación de transición */
+    position: absolute; /* Posición absoluta */
+    text-decoration: none; /* Eliminar el subrayado */
+    z-index: 0; /* Asegura que la imagen esté detrás del texto */
+        opacity: 0.8; /* Reducir la opacidad para permitir que los subenlaces sean visibles */
+    margin-top: -14px; /* Mover hacia arriba */
+        margin-left: 525px; /* Mover hacia la izquierda */
+}
+
+.ver-mas-btn:hover {
+    color: #000; /* Cambiar el color del texto al pasar el mouse */
+}
+
+
+
+</style>
+<!-- nueva vista 2  -->
+
+
+
+<body>  
+
+    <h2 id="mensajee" class="mensaje-animadoo">
+        FE Y NATURALEZA" UN RECORRIDO POR LAS IGLESIAS Y PARQUES DE IBARRA"    </h2>
+
+    <div id="carrusel11" class="carru">
+        <h3 id="m" class="mensaje-ann">PARQUE CIUDAD BLANCA</h3>
+        <img src="bule.png" alt="Descripción de la imagen" class="imagen-animadaa" id="imagen11" loading="lazy">
+        <div class="texto-al-lado">
+            <!-- Texto al lado de la imagen -->
+            <p>
+                Ubicado en la entrada sur de Ibarra, Ecuador, en el área del antiguo aeropuerto Atahualpa, el Parque Ciudad Blanca abarca 240.000 metros cuadrados. Su diseño busca armonizar espacios construidos, áreas verdes y actividades cotidianas, fomentando la convivencia entre la naturaleza y la arquitectura contemporánea. Este entorno promueve la interacción social, la recreación, la movilidad saludable y la conexión con la naturaleza en el corazón de la ciudad.
+            </p>
+        </div>
+    </div>
+    <div id="carrusel12" class="carru"style="display: none;"> 
+        <!-- esta funcion hace q carrusel desaparezca y ingrese al -->
+    <h3 id="m2" class="mensaje-ann">PARQUE CARANQUI </h3>
+    <img src="caranqui.jpg" alt="Descripción de la imagen" class="imagen-animadaa" id="imagen12" loading="lazy">
+    <div class="texto-al-lado">
+        <!-- Texto al lado de la imagen -->
+        <p>
+            Caranqui, parroquia de Ibarra, destaca por su pan de leche y helados de crema, tradición arraigada en familias locales. Siete locales ofrecen estos productos con historias únicas.
+            <br> En el parque central, artesanos elaboran el pan de leche en hornos de leña. Además, se pueden disfrutar platos tradicionales como fritada y hornado. 
+            <br>Caranqui atrae con su herencia cultural, incluyendo La Ciudadela y la iglesia de San Agustín, y sus espacios verdes invitan a explorar y saborear su historia.
+        </p>
+    </div>
+</div>
+
+<div id="carrusel13" class="carru"style="display: none;"> 
+<h3 id="m3" class="mensaje-ann">BASÍLICA LA MERCED</h3>
+<img src="merced.jpg" alt="Descripción de la imagen" class="imagen-animadaa" id="imagen13" loading="lazy">
+<div class="texto-al-lado">
+    <!-- Texto al lado de la imagen -->
+    <p>
+        la Basílica de la Merced impresiona con su arquitectura basilical, destacando elementos góticos y románicos. En su entorno de estilo romano, alberga valiosas muestras pictóricas y su fachada combina elementos góticos y románicos, con un carácter ecléctico historicista. , resaltan muestras pictóricas valiosas y un altar mayor dorado en pan de oro. 
+       
+        
+        <br>  Entre sus tesoros artísticos se encuentran:
+                    <br>   Un retablo barroco con la escultura de la Virgen de la Merced  
+                    <br>      Un crucifijo de la Hacienda de Pesillo.
+         
+       
+<br>La sólida construcción en piedra ha resistido el paso del tiempo, demostrando su relevancia como patrimonio histórico y cultural en la región.
+</div>
+</div>
+
+<div id="carrusel14" class="carru" style="display: none;"> 
+    <h3 id="m4" class="mensaje-ann">LA CATEDRAL DE IBARRA</h3>
+    <img src="moncayo.jpg" alt="Descripción de la imagen" class="imagen-animadaa" id="imagen14" loading="lazy">
+    <div class="texto-al-lado">
+        <!-- Texto al lado de la imagen -->
+        <p>
+            La Catedral de Ibarra, situada en el sector El Sagrario, exhibe un estilo ecléctico e historicista con una fachada de piedra que incluye tres puertas de ingreso y cuatro pilastras. En su interior, alberga retablos barrocos, esculturas de Daniel Reyes y la serie de los apóstoles de Rafael Troya. Reconstruida tras el terremoto de 1868, conserva valiosas obras de la Escuela Quiteña.
+            <br> El Parque Pedro Moncayo, su entorno, es un punto de encuentro histórico en Ibarra, junto a la Catedral, la Capilla Episcopal y el Palacio Municipal.
+
+        </p>
+    </div>
+
+
+</div>
+
+<!-- Agrega botones con puntos para cada carrusel -->
+<div id="puntosss">
+
+</div>
+
+<!-- Flechas del carrusel -->
+<div class="atrass">
+    <img id="atrass" src="atrass.svg" alt="atrass" loading="lazy">
+</div>
+
+<!-- Flecha de adelante -->
+<div class="adelantee">
+    <img id="adelantee" src="adelantee.svg" alt="adelantee" loading="lazy">
+</div>
+
+<div id="barra-horizontal">
+
+</div>
+<a href="https://www.goraymi.com/es-ec/imbabura/ibarra/rutas-paseos/lugares-turisticos-ibarra-apfbj24vu" class="ver-mas-btn" target="_blank">VER MÁS</a>
+
+
+<script>
+    let carrusel11 = document.getElementById('carrusel11');
+    let carrusel12 = document.getElementById('carrusel12');
+    let carrusel13 = document.getElementById('carrusel13');
+    let carrusel14 = document.getElementById('carrusel14');
+
+    let adelantee = document.getElementById('adelantee');
+    let atrass = document.getElementById('atrass');
+    let puntosss = document.getElementById('puntosss');
+
+    adelantee.addEventListener('click', function(){
+        if (carrusel11.style.display !== "none") {
+            carrusel11.style.display = "none";
+            carrusel12.style.display = "block";
+            actualizarPuntosss(12); // Cambiado el número de carrusel activo
+        } else if (carrusel12.style.display !== "none") {
+            carrusel12.style.display = "none";
+            carrusel13.style.display = "block";
+            actualizarPuntosss(13); // Cambiado el número de carrusel activo
+        } else if (carrusel13.style.display !== "none") {
+            carrusel13.style.display = "none";
+            carrusel14.style.display = "block";
+             actualizarPuntosss(14); // Cambiado el número de carrusel activo
+        }
+    });
+
+    atrass.addEventListener('click', function(){
+        if (carrusel12.style.display !== "none") {
+            carrusel12.style.display = "none";
+            carrusel11.style.display = "block";
+             actualizarPuntosss(11); // Cambiado el número de carrusel activo
+        } else if (carrusel13.style.display !== "none") {
+            carrusel13.style.display = "none";
+            carrusel12.style.display = "block";
+            actualizarPuntosss(12); // Cambiado el número de carrusel activo
+        } else if (carrusel14.style.display !== "none") {
+            carrusel14.style.display = "none";
+            carrusel13.style.display = "block";
+             actualizarPuntosss(13); // Cambiado el número de carrusel activo
+        }
+    });
+
+    // Dentro de tu script JavaScript
+    function inicializarPuntosss() {
+    for (let i = 1; i <= 4; i++) { // Cambia 4 al número total de carruseles
+        let punto = document.createElement('button');
+        punto.classList.add('nuumero-puntoo'); // Agrega la clase para dar estilo al número
+        punto.addEventListener('click', function() {
+            cambiarCarru(i + 10); // Cambia 11 al número de inicio del carrusel
+        });
+        puntosss.appendChild(punto);
+    }
+}
+
+
+    inicializarPuntosss();
+
+    function actualizarPuntosss(carruselActivo) {
+    let puntosAntiguos = document.querySelectorAll('.nuumero-puntoo');
+    puntosAntiguos.forEach(function(punto) {
+        punto.classList.remove('bold');
+        punto.style.color = 'white'; // Cambiar el color del texto a blanco en todo momento
+        punto.style.borderColor = 'black'; // Restaurar el borde negro
+    });
+
+    let puntoActivo = puntosAntiguos[carruselActivo - 11]; // Restar 11 porque el carrusel comienza en 11
+    puntoActivo.classList.add('bold');
+    puntoActivo.style.color = 'white'; // Asegurar que el número activo siga siendo blanco
+    puntoActivo.style.borderColor = 'red'; // Cambiar el borde del número activo a rojo
+}
+
+
+    function cambiarCarru(numeroCarru) {
+    // Ocultar todos los carruseles
+    document.querySelectorAll('.carru').forEach(carrusel => {
+        carrusel.style.display = 'none';
+    });
+
+    // Mostrar el carrusel correspondiente al número
+    document.getElementById('carrusel' + numeroCarru).style.display = 'block';
+
+    // Actualizar el estado de los puntos
+    actualizarPuntosss(numeroCarru);
+}
+</script>
+
+<style>
+    /* Estilos generales */
+  
+footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    position: absolute;
+    bottom: -590px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+
+
+}
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+
+.imagen-centradaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 93px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+
+</style>
+
+<body class="pagina-modificada">
+    
+    <footer>
+            <p>Sitio web creado por</p>
+            <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+            
+           
+            
+
+        </footer>
+
+        
+
+</footer>
+    
+<img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaa">
+
+</body>
+
+</html>

@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para el encabezado sin imagen, cambia a la izquierda */
+        body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+        .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+} /* celular,tablet,desktop */
+
+/* Ajusta las llaves en las consultas de medios */
+@media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+ /* celular,tablet,desktop */
+
+        header {
+            text-align: left; /* Alinea el texto a la izquierda */
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+        .nav-link {
+  font-size: 18px;
+  text-decoration: none;
+  position: relative;
+  z-index: 2;
+  font-family: 'Open Sans', sans-serif; /* Agrega este estilo para cambiar el tipo de letra */
+}
+
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces,cambia el color del subenlace activo cuando pase el mouse por subenlace navegacion */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+
+        .imagen-ce {
+            display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 50px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 220px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+        .imagen-ce {
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-ce:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+.imagen-cee {
+  display: block;
+  width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: -250px; /* Ajusta este valor para mover la imagen hacia abajo */
+  margin-left: 680px;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  object-fit: cover; /* Ajusta la imagen para que se adapte al tamaño del contenedor */
+}
+
+.imagen-cee {
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-cee:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+
+.imagen-ceee {
+  display: block;
+  width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: -250px; /* Ajusta este valor para mover la imagen hacia abajo */
+  margin-left: 1130px;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  object-fit: cover; /* Ajusta la imagen para que se adapte al tamaño del contenedor */
+}
+
+.imagen-ceee {
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-ceee:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+.title {
+  font-family: Arial, sans-serif;
+  color:rgb(59, 59, 158);
+
+}
+
+.imagen-ceeee {
+  display: block;
+  width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: 50px; /* Ajusta este valor para mover la imagen hacia abajo */
+  margin-left: 1130px;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  object-fit: cover; /* Ajusta la imagen para que se adapte al tamaño del contenedor */
+}
+
+.imagen-ceeee {
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-ceeee:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.imagen-ceeeee {
+  display: block;
+  width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: -250px; /* Ajusta este valor para mover la imagen hacia abajo */
+  margin-left: 680px;
+  margin-right: auto;
+  position: relative;
+  text-align: center;
+  object-fit: cover; /* Ajusta la imagen para que se adapte al tamaño del contenedor */
+}
+
+.imagen-ceeeee {
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-ceeeee:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.imagen-ceeeeee {
+            display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: -250px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 220px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+        .imagen-ceeeeee {
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-ceeeeee:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.imagen-c {
+    display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: 50px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 220px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+        .imagen-c{
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-c:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.imagen-cc {
+    display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: -250px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 680px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+        .imagen-cc{
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-cc:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+.imagen-ccc {
+    display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+  height: 250px; /* Establece la altura igual a la anchura */
+  margin-top: -250px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 1130px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+        .imagen-ccc{
+  /* ... tus estilos anteriores ... */
+  transition: transform 0.5s; /* Agrega una transición suave */
+}
+
+.imagen-ccc:hover {
+  transform: scale(1.1); /* Aumenta el tamaño de la imagen al pasar el mouse */
+}
+
+#barra-horizontall {
+    width: 700px; /* Ancho de la barra */
+    height: 8px; /* Altura de la barra */
+    background-color: red; /* Color de la barra */
+    margin-left: 450px; /* Espacio entre la barra y los botones */
+    margin-top:50px; 
+    margin-left: 480px; /* Mover hacia la izquierda */
+    
+
+}
+
+.image {
+  background-color: ffffff;
+  width: 40%; /* Ancho del 100% del contenedor padre */
+  height: 420px; /* Altura de 50px */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 450px; /* Mover hacia la izquierda */
+  text-align: justify;
+    line-height: 1.5; /* espacio de 0.5 entre líneas */
+
+
+
+
+}
+.image h1{
+margin-top: 100px; /* Ajusta este valor para mover la imagen hacia abajo */
+color: #e4d905;
+margin-left: -350px; /* Mover hacia la izquierda */
+
+}
+.image h2{
+    color:rgb(59, 59, 158);
+    margin-left: -350px; /* Mover hacia la izquierda */
+
+}
+
+.imagen-centradaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: -205px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        
+.imagen-centradaaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -200px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 268px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .imagen-centradaaaaaaa {
+            display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -120px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 720px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    bottom: -590px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    margin-left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    margin-top: 00px; /* Ajusta este valor para mover la imagen hacia abajo */
+    position: flex;
+
+
+}
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+.imagen-centradaaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <header>
+        <img src="mar.png" alt="Logo" class="logo">
+        <h1 class="title">
+            EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+        </h1>
+       
+        <nav class="nav-links">
+            <a href="index.html" style="color: blue;" class="nav-link" id="inicio">INICIO</a> 
+             <div class="nav-link" id="servicios">
+                <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+               
+            <div class="sub-links">
+                    <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                    <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                    <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                    <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+                </div>
+            </div>
+            <a href="galeria.html" style="color: blue;" class="nav-link active" id="galeria">GALERÍA</a>            <div class="nav-link" id="servicios">
+                <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+               
+                <div class="sub-links">
+                    <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                    <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                    <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>
+                    <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                    <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                    <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+    
+                </div>
+        </nav>
+    </header>
+    <img src="bs.jpg" alt="Descripción de la imagen" class="imagen-ce">
+    <img src="party.jpg" alt="Descripción de la imagen" class="imagen-cee">
+    <img src="42.jpg" alt="Descripción de la imagen" class="imagen-ceee">
+    <img src="43.jpg" alt="Descripción de la imagen" class="imagen-ceeee">
+    <img src="44.jpg" alt="Descripción de la imagen" class="imagen-ceeeee">
+    <img src="41.jpg" alt="Descripción de la imagen" class="imagen-ceeeeee">
+    <img src="pri.jpg" alt="Descripción de la imagen" class="imagen-c">
+    <img src="46.jpg" alt="Descripción de la imagen" class="imagen-cc">
+    <img src="47.jpg" alt="Descripción de la imagen" class="imagen-ccc">
+
+
+
+    <div id="barra-horizontall"></div>
+
+    <div class="image">
+        <h1>ELLOS SON </h1>
+    
+        <h2>Nuestros  Aliados</h2>
+    
+        <a href="https://hinomavesa.com.ec/" target="_blank">
+            <img src="hino.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaa"></a>
+           
+            <a href="https://carroceriaspicosa.com/2020/producto.html" target="_blank">  
+        <img src="zicosa.png" alt="Descripción de la imagen" class="imagen-centradaaaaaa"></a>
+       
+        <a href="https://ec.todosnegocios.com/comercial-automotriz-%22vega%22-06-260-6696" target="_blank">
+        <img src="ve.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaaaa"></a>
+    
+    
+    </div>
+    
+<body class="pagina-modificada">
+    
+    <footer>
+            <p>Sitio web creado por</p>
+            <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+            
+           
+            
+
+        </footer>
+
+        
+
+</footer>
+<img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaaa">
+
+    <!-- Aquí puedes agregar más contenido si lo deseas -->
+
+    <!-- Contenido principal -->
+    <div class="nav-bottom">
+        <div class="popup-whatsapp fadeIn">
+            <div class="content-whatsapp -top">
+                <button type="button" class="closePopup">
+                    <i class="material-icons icon-font-color">close</i>
+                </button> 
+                <p style="display: inline-block;">
+                    <img src="secretary.png" width="50" style="vertical-align: middle;">
+                    <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+                </p>
+            </div>
+            <div class="content-whatsapp -bottom">
+                <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                <button class="send-msPopup" id="send-btn" type="button">
+                    <i class="material-icons icon-font-color--black">send</i>
+                </button>
+            </div>
+        </div>
+        <button type="button" id="whats-openPopup" class="whatsapp-button">
+            <div class="float">
+                <i class="fa fa-whatsapp my-float"></i>
+            </div>
+        </button>
+        <div class="circle-anime"></div>
+    </div>
+    
+    <script>
+        // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+        document.getElementById('whats-openPopup').addEventListener('click', function() {
+            document.querySelector('.popup-whatsapp').style.display = 'block';
+        });
+    
+        // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+        document.querySelector('.closePopup').addEventListener('click', function() {
+            document.querySelector('.popup-whatsapp').style.display = 'none';
+        });
+    
+        // Enviar mensaje al hacer clic en el botón de enviar
+        document.querySelector('.send-msPopup').addEventListener('click', function() {
+            var message = document.getElementById('whats-in').value;
+            var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+    
+            // Verificar si se ha ingresado un mensaje
+            if (message.trim() === '') {
+                // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+                window.open('https://wa.me/' + phoneNumber);
+            } else {
+                // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+                window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+            }
+        });
+    </script>
+    
+</body>
+</html>

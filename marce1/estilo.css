@@ -1,0 +1,123 @@
+/* Estilos para el encabezado sin imagen  cambia ala inquierda*/
+header {
+    text-align: center; /* Centramos el texto horizontalmente */
+    background-color: #f0f0f0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Estilos para la imagen del logo */
+/* Estilos para la imagen del logo */
+.logo {
+    width: 150px; /* Ajusta el ancho según tu preferencia */
+    height: auto; /* Mantener la proporción original */
+    margin-right: 10px; /* Espacio entre el logo y el título */
+    margin-left: -50px; /* Agrega un margen a la izquierda de la imagen */
+    margin-top: 10px; /* Ajusta el margen superior para bajar un poco más el logo */
+}
+
+/* Estilos para el título */
+.title {
+    margin-top: 15px; /* Ajusta el margen superior */
+    margin-bottom: 0; /* Elimina el margen inferior */
+    margin-left: -35px; /* Ajusta el margen izquierdo para acercar el título al logo */
+    text-align: justify; /* Justifica el texto del título */
+}
+
+
+
+/* CENTRA LOS ENLACES */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Alineamos los enlaces de navegación al centro */
+    flex-grow: 1; /* Para que los enlaces ocupen el espacio restante */
+}
+/* damos espacios entre los enlaces de navegacion */
+.nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añadimos espacio entre los enlaces */
+    position: relative; /* Añadimos posición relativa para facilitar el subrayado */
+}
+
+/* SUBRAYADO AL PASAR EL MOUSE */
+.nav-link:hover::after {
+    content: ''; /* Añadimos contenido pseudo-elemento */
+    position: absolute; /* Posición absoluta para colocar el subrayado */
+    left: 0; /* Alineamos el subrayado con el borde izquierdo del enlace */
+    bottom: -2px; /* Colocamos el subrayado justo debajo del enlace */
+    width: 100%; /* Hacemos que el subrayado ocupe todo el ancho del enlace */
+    height: 2px; /* Altura del subrayado */
+    background-color: red; /* Color del subrayado */
+
+}
+/* ESTILOS AL ACTIVAR EL sub en ENLACE, activa cuando usuario pase por el maus  el enlace */
+.nav-link.active {
+    border-bottom: 4px solid red;
+}
+
+/* Otros estilos existentes  para cajones de subenlaces */
+.sub-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ac9279;
+    padding: 10px;
+
+
+}
+
+.nav-link:hover .sub-links {
+    display: block;
+}
+/*hasta aqui estos estilos para cajones de subenlaces*/
+
+/* Otros estilos existentes */
+.sub-links a[href="transporte.html"],
+.sub-links a[href="transportedecarga.html"] {
+    text-decoration: none; /* Eliminar el subrayado de los sub-enlaces específicos */
+}
+
+.sub-links a[href="transporte.html"]:hover,
+.sub-links a[href="transportedecarga.html"]:hover {
+    text-decoration: none; /* Asegurar que no se subrayen al pasar el mouse */
+}
+.sub-links a {
+    font-size: 20px; /* Ajustar el tamaño de fuente de los sub-enlaces */
+}
+
+/* Establecer el ancho para los sub-enlaces */
+.sub-links a {
+    font-size: 20px; /* Ajustar el tamaño de fuente de los sub-enlaces */
+    width: 150px; /* Establecer el ancho deseado para cada sub-enlace */
+    display: inline-block; /* Hacer que los sub-enlaces se muestren en línea y sean bloque */
+    text-align: center; /* Centrar el texto dentro de cada sub-enlace */
+    padding: 10px; /* Añadir relleno para mejorar el aspecto visual */
+    margin: 5px; /* Añadir margen para separar los sub-enlaces */
+}
+
+
+.sub-links a {
+    font-size: 20px;
+    width: 200px;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 5px 0;
+    color: black;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.sub-links a:hover {
+    background-color: lightgray; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+} 
+/* hasta aqui los estilos para cajones de subenlaces con el click*/
+    /* para q no salgade forma adrupta al hacer pasar el mouse por el encabezado de cualqquier na */
+html {
+    scroll-behavior: smooth;
+}

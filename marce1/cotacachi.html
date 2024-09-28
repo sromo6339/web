@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para el encabezado */
+        .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        @media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+
+    }
+        body {
+            overflow-x: hidden;
+        }
+        
+        header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 40px;
+            position: relative;
+        }
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces al pasar el mouse */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+
+    /* Estilos para CARRUSEL imágenes */        
+         
+/* Estilos para CARRUSEL imágenes */        
+.carousel {
+    perspective: 1000px;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 350px; /* Agrega un padding superior de 200px */
+    left: 100px; /* Ajusta este valor para mover la imagen hacia la derecha */
+
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    transform: rotateY(0deg);
+}
+
+.item {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    top: 0;
+    left: 0;
+    transform: translateZ(1000px);
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 2px solid white;
+}
+
+.item:nth-child(1) { 
+    transform: rotateY(0deg) translateZ(400px); 
+    background-image: url('cotaa.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+.item:nth-child(2) { 
+    transform: rotateY(51.43deg) translateZ(400px); 
+    background-image: url('piñan.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-color: rgba(0, 0, 0, 0.5); /* Color de fondo semi-transparente */
+
+
+}
+.item:nth-child(3) { 
+    transform: rotateY(102.86deg) translateZ(400px); 
+    background-image: url('junin.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+.item:nth-child(4) { 
+    transform: rotateY(154.29deg) translateZ(400px); 
+    background-image: url('cotta.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+.item:nth-child(5) { 
+    transform: rotateY(205.72deg) translateZ(340px); 
+    background-image: url('cedros.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+.item:nth-child(6) { 
+    transform: rotateY(257.15deg) translateZ(300px); 
+    background-image: url('nanvu.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+.item:nth-child(7) { 
+    transform: rotateY(308.58deg) translateZ(350px); 
+    background-image: url('cuicocha.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 2;
+}
+
+.arrow-left {
+    left: 10px;
+}
+
+.arrow-right {
+    right: 10px;
+}
+
+.atrasss {
+    left: 10px;
+}
+
+.adelanteee {
+    right: 10px;
+} 
+/* Estilos titulo y texto*/
+.content span {
+    display: block;
+    font-size: 24px; /* Ajusta el tamaño de la letra según sea necesario */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno para el texto */
+    border-radius: 5px; /* Bordes redondeados opcionales */
+    margin-top: 50px; /* Mueve el título hacia abajo */
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.text-box p {
+    font-size: 16px; /* Tamaño base del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 10px; /* Espacio inferior entre párrafos */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente negro */
+
+    /* Estilos adicionales según sea necesario */
+}
+
+.text-box .text-2 {
+    font-size: 10px; /* Tamaño de letra para el texto 2 */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+    line-height: 1.5; /* Espaciado entre líneas del texto */
+    color: #fff; /* Color del texto */
+    margin-top: 45px; /* Mover hacia arriba */
+
+}
+
+.text-box .text-3 {
+    font-size: 10px; /* Tamaño de letra para el texto 2 */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+    line-height: 1.5; /* Espaciado entre líneas del texto */
+    color: #fff; /* Color del texto */
+    margin-top: 75px; /* Mover hacia arriba */
+}
+.text-box .text-4 {
+    font-size: 10px; /* Tamaño de letra para el texto 2 */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+    line-height: 1.5; /* Espaciado entre líneas del texto */
+    color: #fff; /* Color del texto */
+    margin-top: 90px; /* Mover hacia arriba */
+}
+
+
+.text-box .text-5 {
+    font-size: 10px; /* Tamaño de letra para el texto 2 */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+    line-height: 1.5; /* Espaciado entre líneas del texto */
+    color: #fff; /* Color del texto */
+    margin-top: 20px; /* Mover hacia arriba */
+}
+
+.text-box .text-6 {
+    font-size: 10px; /* Tamaño de letra para el texto 2 */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+    line-height: 1.5; /* Espaciado entre líneas del texto */
+    color: #fff; /* Color del texto */
+    margin-top: 75px; /* Mover hacia arriba */
+}
+.text-box .text-7 {
+    font-size: 10px; /* Tamaño de letra para el texto 2 */
+    z-index: 2; /* Asegura que el texto esté sobre el overlay */
+    line-height: 1.5; /* Espaciado entre líneas del texto */
+    color: #fff; /* Color del texto */
+    margin-top: 75px; /* Mover hacia arriba */
+}
+
+/* Agrega estilos para otros textos según necesites */
+/* Agrega estilos para titulo  */
+
+:root {
+            --primary-color: #fff; /* Escoge el color que desees */
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: rgb(44, 13, 13);
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            font-size: 3em;
+            text-align: center;
+            margin-top: 20vh;
+            margin-top: -350px; /* Añade esta línea para bajar los elementos */
+            color: blue;
+
+
+        }
+
+       
+  /* estilo para flechas  */
+
+        .atrasss {
+    position: absolute;
+    top: 108%; /* Ajusta el valor para bajar las flechas */
+    left: 775px; /* Ajusta la distancia desde el borde izquierdo */
+    right: auto; /* Restablece la propiedad right */
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+
+.adelanteee {
+    position: absolute;
+    top: 108%; /* Ajusta el valor para bajar las flechas */
+    right: 730px; /* Ajusta la distancia desde el borde derecho */
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    
+
+}
+  /* estilo para sub enlace  */
+footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    bottom: -590px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    margin-left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    margin-top: 700px; /* Ajusta este valor para mover la imagen hacia abajo */
+    position: flex;
+
+
+}
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+
+/* imagen R*/
+
+.imagen-centradaaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+
+
+</style>
+</head>
+<body>
+    <header>
+        <img src="mar.png" alt="Logo" class="logo">
+        <h1 class="title">EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN</h1>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link" id="inicio" style="color: blue;">INICIO</a>
+            <div class="nav-link" id="servicios">
+                <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+                <div class="sub-links">
+                    <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                    <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                    <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                    <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+                </div>
+            </div>
+            <a href="galeria.html" class="nav-link" id="galeria" style="color: blue;">GALERÍA</a>
+            <div class="nav-link active" id="recorridos">
+                <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+                <div class="sub-links">
+                    <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                    <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                    <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante</a>
+                    <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                    <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                    <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="carousel">
+        <div class="spinner">
+            <div class="item">
+                <div class="content">
+                    <span></span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span>LAGUNA DE PIÑÁN</span>
+                    <div class="text-box">
+
+                        <p  class="text-2" >La Laguna de Piñán se encuentra a 50 km desde el centro de Cotacachi y a 40 km desde la Parroquia de Imantag, en el cantón Cotacachi. Ubicada al occidente de Urcuquí y noroccidente de Imantag,
+                        la laguna se encuentra a 3,246 m de altitud con una temperatura promedio de 12°C. La comunidad de Piñán es un asentamiento ancestral dentro del Parque Nacional Cotacachi-Cayapas, considerado uno de los últimos "huasipungos" del país.
+                        <br> Rodeada de más de 20,000 hectáreas de páramos, ríos, lagunas, volcanes y bosques alto andinos, la laguna de Piñán también alberga vestigios pre-incaicos como pucarás, tolas y caminos ancestrales.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span>CASCADAS DE JUNIN</span>
+                    <div class="text-box">
+
+                        <p  class="text-3" >La comunidad de Junín se encuentra en el área de amortiguamiento de la Reserva Ecológica Cotacachi-Cayapas, en la Parroquia García Moreno, y es habitada por 45 familias con 280 personas.
+                        <br> El clima es subtropical húmedo con precipitaciones anuales entre 2.000 y 3.000 mm. La reserva comunitaria ofrece senderos ecológicos y vistas a paisajes, aves, animales y orquídeas endémicas, incluyendo cascadas de hasta 35 metros de altura y vestigios de la exploración minera.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span>VOLCÁN IMBABURA</span>
+                    <div class="text-box">
+
+                        <p  class="text-4" >El cantón Cotacachi es el más extenso de la provincia de Imbabura, con una variedad de relieve que incluye montañas, valles, colinas y llanuras. Se divide en dos zonas: Andina y Subtropical. 
+                    <br>El 38.77% del cantón es montañoso, el 15.91% colinas medianas y el 15.65% relieve escarpado. La quema del páramo es una amenaza contra las montañas, y el monitoreo del volcán Cotacachi es una acción principal de prevención.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span>BOSQUE PROTECTOR LOS CEDROS</span>
+                    <div class="text-box">
+
+                        <p  class="text-5" >En Cotacachi, en la zona de Intag se encuentra ubicado este bosque con 6.400 has, siendo una de las más importantes áreas de conservación de la biodiversidad del occidente Ecuatoriano. Es parte de las eco – regiones del Chocó y de los Andes Tropicales, zonas con la mayor biodiversidad del planeta. 
+                        <br>Alberga 350 especies de aves, se estima alrededor de 400 especies de orquídeas y 290 especies de árboles por hectárea. Además en Los Cedros nacen 4 ríos importantes: Manduriaco, Manduriaco Chico, Río Verde y Los Cedros.
+                    </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                    <span>COMPLEJO TERMAS NANGULVÍ</span>
+                    <div class="text-box">
+
+                        <p  class="text-6" >El Complejo Termas Nangulví ofrece servicios de alimentación en su restaurante a orillas del Río Intag, con capacidad para 50 comensales. También cuenta con habitaciones para hasta 18 personas, incluyendo opciones matrimoniales y familiares. Las termas comunitarias de Nangulví tienen 6 piscinas de aguas termales y servicios de baño, bar y zona de recreo. 
+                        <br>Además, se ofrecen 6 cabañas con baño privado y vistas al río.
+                    </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <div class="content">
+                    <span>LAGUNA CUICOCHA</span>
+                    <div class="text-box">
+
+                    <p  class="text-7" >La Laguna de Cuicocha, un cráter volcánico en Cotacachi, es considerada sagrada por los ritos de purificación shamánicos que se realizan en sus aguas durante el solsticio de verano. 
+                        <br>Alberga una diversidad de fauna, incluyendo el cuy de monte, conejo, armadillo, zorro andino y aves como tórtolas, colibríes y el majestuoso cóndor, rey de los Andes.
+
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Flechas del carrusel -->
+    <div class="arrow arrow-left atrasss">
+        <img id="atrasss" src="at.svg" alt="atrass" loading="lazy">
+    </div>
+    <div class="arrow arrow-right adelanteee">
+        <img id="adelanteee" src="adee.svg" alt="adelantee" loading="lazy">
+    </div>
+
+    <!-- titulo  -->
+
+    <h2> </h2>
+
+
+    <!-- enlace navegacion footer -->
+
+
+    <body class="pagina-modificada">
+    
+        <footer>
+                <p>Sitio web creado por</p>
+                <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+                
+               
+                
+    
+            </footer>
+    
+            
+    
+    </footer>
+
+    <img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaaa">
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+        const text = "AVENTURAS, PAISAJES Y TRADICIONES";
+        const h2Element = document.querySelector('h2');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                h2Element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        typeWriter();
+
+        const image = document.getElementById('imagen-centrada');
+        const listItems = document.querySelectorAll('ul li');
+
+        listItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                image.style.display = 'none';
+            });
+            item.addEventListener('mouseleave', function() {
+                image.style.display = 'block';
+            });
+        });
+    });
+       
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.spinner');
+    let angle = 0;
+    const numItems = document.querySelectorAll('.spinner .item').length;
+    const angleIncrement = 360 / numItems;
+
+    document.getElementById('adelanteee').addEventListener('click', function() {
+        angle -= angleIncrement;
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    });
+
+    document.getElementById('atrasss').addEventListener('click', function() {
+        angle += angleIncrement;
+        carousel.style.transform = `rotateY(${angle}deg)`;
+    });
+});
+
+</script>
+
+
+<!-- Contenido principal -->
+<div class="nav-bottom">
+    <div class="popup-whatsapp fadeIn">
+        <div class="content-whatsapp -top">
+            <button type="button" class="closePopup">
+                <i class="material-icons icon-font-color">close</i>
+            </button> 
+            <p style="display: inline-block;">
+                <img src="secretary.png" width="50" style="vertical-align: middle;">
+                <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+            </p>
+        </div>
+        <div class="content-whatsapp -bottom">
+            <input class="whats-input" id="whats-in" type="text" placeholder="Enviar mensaje..." />
+            <button class="send-msPopup" id="send-btn" type="button">
+                <i class="material-icons icon-font-color--black">send</i>
+            </button>
+        </div>
+    </div>
+    <button type="button" id="whats-openPopup" class="whatsapp-button">
+        <div class="float">
+            <i class="fa fa-whatsapp my-float"></i>
+        </div>
+    </button>
+    <div class="circle-anime"></div>
+</div>
+
+<script>
+    // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+    document.getElementById('whats-openPopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'block';
+    });
+
+    // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+    document.querySelector('.closePopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'none';
+    });
+
+    // Enviar mensaje al hacer clic en el botón de enviar
+    document.querySelector('.send-msPopup').addEventListener('click', function() {
+        var message = document.getElementById('whats-in').value;
+        var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+
+        // Verificar si se ha ingresado un mensaje
+        if (message.trim() === '') {
+            // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+            window.open('https://wa.me/' + phoneNumber);
+        } else {
+            // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+            window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

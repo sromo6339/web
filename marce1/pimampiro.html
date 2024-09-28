@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para el encabezado sin imagen, cambia a la izquierda */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+/*hasta aqui para llene todos los espacio del escritorio*/
+        /* Estilos para el encabezado */
+        header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        @media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+
+    }
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 40px;
+            position: relative;
+        }
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces al pasar el mouse */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+
+
+
+    /* Estilos para tarjeta */
+
+    .reversed-card {
+    perspective: 1000px;
+    width: 400px; /* Ajusta según sea necesario */
+    height: 400px; /* Ajusta según sea necesario */
+    margin: 20px;
+    display: inline-block;
+}
+
+.flip-card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    left: 100px;
+    top: 150px;
+
+}
+
+.flipp-card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    left: 170px;
+    top: 150px;
+
+}
+
+
+.flippp-card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    left: 230px;
+    top: 150px;
+
+}
+
+
+.flipppp-card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    left: 100px;
+    top: 200px;
+
+}
+
+
+
+.flippppp-card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    left: 170px;
+    top: 200px;
+
+}
+
+.flipppppp-card-inside {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    left: 230px;
+    top: 200px;
+
+}
+
+
+.reversed-card:hover .flip-card-inside {
+    transform: rotateY(180deg);
+}
+.reversed-card:hover .flipp-card-inside {
+    transform: rotateY(180deg);
+}
+
+.reversed-card:hover .flippp-card-inside {
+    transform: rotateY(180deg);
+}
+.reversed-card:hover .flipppp-card-inside {
+    transform: rotateY(180deg);
+}
+
+.reversed-card:hover .flippppp-card-inside {
+    transform: rotateY(180deg);
+}
+
+.reversed-card:hover .flipppppp-card-inside {
+    transform: rotateY(180deg);
+}
+
+
+
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+.flip-card-back {
+    background-color: #2980b9;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 20px;
+}
+
+
+.titlee {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    position: absolute;
+    bottom: -500px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+
+
+}
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+
+.imagen-centradaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1113px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+
+
+
+       
+        h2 {
+            position: relative;
+            animation: slideIn 2s ease-out forwards;
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: -830px; /* Añade esta línea para bajar los elementos */
+            color: blue;
+            
+        }
+
+        @keyframes slideIn {
+            from {
+                right: -100%;
+            }
+            to {
+                right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <img src="mar.png" alt="Logo" class="logo">
+        <h1 class="title">
+        EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+        </h1>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link" id="inicio" style="color: blue;">INICIO</a>
+            <div class="nav-link " id="servicios">
+                <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+               
+                <div class="sub-links">
+                    <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                    <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                    <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                    <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+                </div>
+            </div>
+            <a href="galeria.html" class="nav-link" id="galeria" style="color: blue;">GALERÍA</a>
+            <div class="nav-link active" id="recorridos">
+                <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+               
+                <div class="sub-links">
+                    <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                    <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                    <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>
+                    <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                    <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                    <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+
+                </div>
+        </nav>
+    </header>
+
+    <!-- Aquí puedes agregar más contenido si lo deseas -->
+
+
+    <div class="reversed-card">
+        <div class="flip-card-inside">
+            <div class="flip-card-front">
+                <img src="piñan.jpg" alt="Image Description" style="width:100%; height:100%;">
+            </div>
+            <div class="flip-card-back">
+                <div class="titlee">LAGUNA DE PURUHANTA</div>
+                <p>Debido a su difícil acceso, la Laguna de Puruhanta no es aprovechada, manteniendo sus aguas puras y cristalinas. 
+                    <br>Está rodeada de bosques nublados y páramos que albergan al cóndor andino y al oso de anteojos.</p>
+                    <br>Recoge agua de cuatro vertientes y desagua en el Río Pisque, que se convierte en el Río Mataquí y luego en el Río Chota, formando la cuenca del Río Mira.
+                   <br> En la Laguna de Puruhanta se pueden realizar actividades 
+                   <br> *Como trekking
+                   <br> *Avistamiento de aves
+                   <br> *Pesca deportiva
+                   <br> *camping y fotografía.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="reversed-card">
+        <div class="flipp-card-inside">
+            <div class="flip-card-front">
+                <img src="arra.jpg" alt="Image Description 2" style="width:100%; height:100%;">
+            </div>
+            <div class="flip-card-back">
+                <div class="titlee">BOSQUE LOS ARRAYANES
+                </div>
+                <p>El bosque encierra una milenaria e inmensa variedad de paisajes, color y belleza, recursos que el turista podrá admirar, es utilizado por los estudiantes de las escuelas y colegios del sector, así como de otros cantones para paseos cortos de esparcimiento e investigación.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="reversed-card">
+        <div class="flippp-card-inside">
+            <div class="flip-card-front">
+                <img src="trueq.jpg" alt="Image Description 2" style="width:100%; height:100%;">
+            </div>
+            <div class="flip-card-back">
+                <div class="titlee">EL TRUEQUE DEL SOL
+                </div>
+                <p>El Trueque del Sol ofrece a los turistas la oportunidad de experimentar una práctica ancestral de intercambio, conocer la riqueza natural y cultural de Pimampiro, y participar en actividades y tradiciones típicas de esta región.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="reversed-card">
+        <div class="flipppp-card-inside">
+            <div class="flip-card-front">
+                <img src="pacha.jpg" alt="Image Description 2" style="width:100%; height:100%;">
+            </div>
+            <div class="flip-card-back">
+                <div class="titlee">CASCADA PACCHA
+                </div>
+<p>     Impresionante caída de agua que vale la pena visitar.
+    <br> El turista podrá descansar plácidamente en las zonas destinadas para camping, en medio del murmullo de las aguas límpidas del río Pita y el arrullador trinar de las aves del lugar.
+    El tiempo estimado del recorrido es de 3 horas, entre ida y retorno.
+</p>            </div>
+        </div>
+    </div>
+
+
+    <div class="reversed-card">
+        <div class="flippppp-card-inside">
+            <div class="flip-card-front">
+                <img src="negra.jpg" alt="Image Description 2" style="width:100%; height:100%;">
+            </div>
+            <div class="flip-card-back">
+                <div class="titlee">LAGUNA NEGRA
+                </div>
+<p>Es famosa por sus paisajes magníficos, sus montañas y demás recursos naturales, como balnearios, cascadas, lagunas y termas con aguas curativas.
+    <br> Sus  actividades: senderismo extremo, acampada a cielo abierto, pesca, observación y estudio de la flora y fauna autóctona.
+</p>            </div>
+        </div>
+    </div>
+
+
+    
+    
+    <div class="reversed-card">
+        <div class="flipppppp-card-inside">
+            <div class="flip-card-front">
+                <img src="conra.jpg" alt="Image Description 2" style="width:100%; height:100%;">
+            </div>
+            <div class="flip-card-back">
+                <div class="titlee"> CASCADA CONRAYARO
+                </div>
+<p>
+    Caminando los chaquiñanes de Imbabura, llegamos a la Cascada Conrayaro, en la parroquia San Blas del cantón Urcuquí. Usted puede organizar un fin de semana con su familia o grupo de amigos para venir y recorrer estos hermosos parajes parte del territorio del Proyecto Geoparque Imbabura.
+    <br> Luego de la caminata, para soltar los músculos puede disfrutar de las aguas termales, tibias de Timbuyacu y disfrutar de la gastronomía local.
+</p>        </div>
+    </div>
+</div>
+
+
+<h2>PIMAMPIRO: NATURALEZA VIRGEN Y PAISAJES INOLVIDABLES</h2>
+
+
+<body class="pagina-modificada">
+    
+    <footer>
+            <p>Sitio web creado por</p>
+            <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+            
+           
+            
+
+        </footer>
+
+        
+
+</footer>
+    
+<img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaa">
+
+
+    <!-- Contenido principal -->
+    <div class="nav-bottom">
+        <div class="popup-whatsapp fadeIn">
+            <div class="content-whatsapp -top">
+                <button type="button" class="closePopup">
+                    <i class="material-icons icon-font-color">close</i>
+                </button> 
+                <p style="display: inline-block;">
+                    <img src="secretary.png" width="50" style="vertical-align: middle;">
+                    <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+                </p>
+            </div>
+            <div class="content-whatsapp -bottom">
+                <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                <button class="send-msPopup" id="send-btn" type="button">
+                    <i class="material-icons icon-font-color--black">send</i>
+                </button>
+            </div>
+        </div>
+        <button type="button" id="whats-openPopup" class="whatsapp-button">
+            <div class="float">
+                <i class="fa fa-whatsapp my-float"></i>
+            </div>
+        </button>
+        <div class="circle-anime"></div>
+    </div>
+
+    <script>
+        // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+        document.getElementById('whats-openPopup').addEventListener('click', function() {
+            document.querySelector('.popup-whatsapp').style.display = 'block';
+        });
+    
+        // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+        document.querySelector('.closePopup').addEventListener('click', function() {
+            document.querySelector('.popup-whatsapp').style.display = 'none';
+        });
+    
+        // Enviar mensaje al hacer clic en el botón de enviar
+        document.querySelector('.send-msPopup').addEventListener('click', function() {
+            var message = document.getElementById('whats-in').value;
+            var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+    
+            // Verificar si se ha ingresado un mensaje
+            if (message.trim() === '') {
+                // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+                window.open('https://wa.me/' + phoneNumber);
+            } else {
+                // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+                window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+            }
+        });
+    </script>
+    
+    
+
+    
+
+</body>
+</html>
+<style>
+     body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+    
+.nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+    
+   
+    </style>
+    <body>  
+    
+    </body>
+    </html>
+    

@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para el encabezado */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+@media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+        header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 40px;
+            position: relative;
+        }
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces al pasar el mouse */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+
+
+        .div {
+  background-color: rgb(75, 83, 163);
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  height: 200px; /* Altura de 50px */
+  margin-top: -21px; /* Ajusta este valor para mover la imagen hacia abajo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.div h1 {
+  color: #e4d905; /* Cambia el color del texto a blanco */
+  font-size: 28px; /* Cambia el tamaño del texto a 36px */
+  text-align: center; /* Centra el texto horizontalmente */
+margin-left: 1px;
+
+}
+
+.div h3{
+    color: #fff; /* Cambia el color del texto a blanco */
+  font-size: 35px; /* Cambia el tamaño del texto a 36px */
+  text-align: center; /* Centra el texto horizontalmente */
+
+}
+.div h4{
+    color: #fff; /* Cambia el color del texto a blanco */
+  font-size: 20px; /* Cambia el tamaño del texto a 36px */
+  text-align: center; /* Centra el texto horizontalmente */
+
+}
+
+
+#barra-horizontal {
+    width: 300px; /* Ancho de la barra */
+    height: 3px; /* Altura de la barra */
+    background-color: red; /* Color de la barra */
+    margin-left: 450px; /* Espacio entre la barra y los botones */
+    margin-top: -90px; 
+    margin-left: 680px; /* Mover hacia la izquierda */
+    
+
+}
+
+
+
+
+
+  /* Estilos para las tarjetas imágenes */
+  .card {
+            position: relative;
+            width: 400px; /* Ajusta según tus necesidades */
+            height: 400px; /* Ajusta según tus necesidades */
+            overflow: hidden;
+            border: 2px solid transparent;
+            border-radius: 15px; /* Añadido para esquinas redondeadas */
+            transition: border 0.5s ease; /* Añadido para la transición del borde */
+            margin: 20px; /* Añadir margen entre las tarjetas */
+            top: 22px; /* bajar */
+            left: 50px; /* mover izquierda */
+        }
+
+        .card:hover {
+            border: 5px solid #ffcc00; /* Color del borde cuando el mouse está sobre la tarjeta */
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Asegura que la imagen cubra todo el contenedor */
+            filter: none; /* Imagen a color inicialmente */
+            transition: filter 0.5s ease; /* Transición suave del filtro */
+        }
+
+        .card:hover img {
+            filter: grayscale(1) brightness(0.4); /* Imagen en tonos de gris cuando el mouse está sobre la tarjeta */
+        }
+
+        .content {
+            width: 80%;
+            color: #fff;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad para sombreado */
+            padding: 20px;
+            border-radius: 10px; /* Ajusta el radio de las esquinas si lo deseas */
+        }
+
+        .card:hover .content {
+            opacity: 1;
+        }
+
+        .content h2 {
+            font-size: 24px; /* Tamaño del título */
+            margin: 0;
+        }
+
+        .content p {
+            font-size: 16px; /* Tamaño del texto */
+            margin: 10px 0 0; /* Añade margen para el párrafo */
+        }
+
+        /* Estilos específicos para la segunda tarjeta */
+        .card.second {
+            position: relative;
+            top: -400px; /* bajar */
+            left: 605px; /* mover izquierda */
+        }
+        .card.third {
+            position: relative;
+            top: -825px; /* bajar */
+            left: 1150px; /* mover izquierda */
+            
+        }
+
+       
+        .image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex; /* Añade flexbox para asegurar que la imagen se centre correctamente */
+    justify-content: center;
+    align-items: center;
+}
+.imagen-centrada {
+            display: block;
+            width: 450px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -1415px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 1150px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+            border: 6px solid red; /* Añade un borde rojo de 10px de grosor */
+            opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.imagen-centrada.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+       
+/* Ajuste en el estilo de la imagen para asegurar que se muestre correctamente */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto debería asegurar que la imagen cubra todo el contenedor */
+    transition: filter 0.5s ease; /* Transición suave del filtro */
+}
+
+
+
+.services-container {
+    width: 300px;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-top: 150px; 
+    margin-left: 100px; /* Mover hacia la izquierda */
+ /* Animaciones */
+ opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.services-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.services-header {
+    background-color: #b71c1c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.services-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.services-list li:hover {
+    background-color: #f1f1f1;
+}
+
+.services-list li::before {
+    content: "» ";
+    color: #b71c1c;
+}
+
+
+.text {
+  background-color: ffffff;
+  width: 40%; /* Ancho del 100% del contenedor padre */
+  height: 480px; /* Altura de 50px */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 450px; /* Mover hacia la izquierda */
+  text-align: justify;
+    line-height: 1.5; /* espacio de 0.5 entre líneas */
+    margin-top: -280px;
+ /* Animaciones */
+ opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.text h1{
+margin-top: -200px; /* Ajusta este valor para mover la imagen hacia abajo */
+color:rgb(59, 59, 158);
+margin-left: -7px;
+}
+.text h2{
+    color:rgb(59, 59, 158);
+
+}
+
+
+
+
+        
+
+.image {
+  background-color: ffffff;
+  width: 40%; /* Ancho del 100% del contenedor padre */
+  height: 420px; /* Altura de 50px */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 450px; /* Mover hacia la izquierda */
+  text-align: justify;
+    line-height: 1.5; /* espacio de 0.5 entre líneas */
+
+
+
+
+}
+.image h1{
+margin-top: 30px; /* Ajusta este valor para mover la imagen hacia abajo */
+color: #e4d905;
+margin-left: -350px; /* Mover hacia la izquierda */
+
+}
+.image h2{
+    color:rgb(59, 59, 158);
+    margin-left: -350px; /* Mover hacia la izquierda */
+
+}
+
+.imagen-centradaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: -205px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        
+.imagen-centradaaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -200px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 268px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .imagen-centradaaaaaaa {
+            display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -120px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 720px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        #barra-horizontalll {
+    width: 300px; /* Ancho de la barra */
+    height: 3px; /* Altura de la barra */
+    background-color: red; /* Color de la barra */
+    margin-left: 450px; /* Espacio entre la barra y los botones */
+    margin-top: -90px; 
+    margin-left: 680px; /* Mover hacia la izquierda */
+    
+
+}
+
+
+footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    bottom: -590px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    margin-left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    margin-top: 1050px; /* Ajusta este valor para mover la imagen hacia abajo */
+    position: flex;
+
+
+}
+h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+
+    }
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+.imagen-centradaaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+        .z h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+        margin-top: -100px;
+
+    }
+    #barra-horizontall {
+    width: 700px; /* Ancho de la barra */
+    height: 8px; /* Altura de la barra */
+    background-color: red; /* Color de la barra */
+    margin-top:-750px; 
+    margin-left: 480px; /* Mover hacia la izquierda */
+    
+
+}
+
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="mar.png" alt="Logo" class="logo">
+    <h1 class="title">
+        EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+    </h1>
+    
+    
+    <nav class="nav-links">
+        <a href="index.html" style="color: blue;"class="nav-link " id="inicio">INICIO</a>
+        <div class="nav-link active" id="servicios">
+            <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+           
+            <div class="sub-links">
+                <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+            </div>
+        </div>
+        <a href="galeria.html" style="color: blue;" class="nav-link" id="galeria">GALERÍA</a>            <div class="nav-link" id="Recorridos">
+            <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+           
+            <div class="sub-links">
+                <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>
+                <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+
+            </div>
+    </nav>
+</header>
+
+<!-- Aquí puedes agregar más contenido si lo deseas -->
+
+<!-- Contenido principal -->
+<div class="nav-bottom">
+    <div class="popup-whatsapp fadeIn">
+        <div class="content-whatsapp -top">
+            <button type="button" class="closePopup">
+                <i class="material-icons icon-font-color">close</i>
+            </button> 
+            <p style="display: inline-block;">
+                <img src="secretary.png" width="50" style="vertical-align: middle;">
+                <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+            </p>
+        </div>
+        <div class="content-whatsapp -bottom">
+            <input class="whats-input" id="whats-in" type="text" placeholder="Enviar mensaje..." />
+            <button class="send-msPopup" id="send-btn" type="button">
+                <i class="material-icons icon-font-color--black">send</i>
+            </button>
+        </div>
+    </div>
+    <button type="button" id="whats-openPopup" class="whatsapp-button">
+        <div class="float">
+            <i class="fa fa-whatsapp my-float"></i>
+        </div>
+    </button>
+    <div class="circle-anime"></div>
+</div>
+
+<div class="div">
+    <h1>CONOCE LO QUE OFRECEMOS
+        <br>
+        <h3>¡Explora Imbabura con Comodidad y Estilo!</h3>
+        
+        
+        
+        <h4>Ponemos a disposición de nuestros usuarios, siempre lo mejor de nosotros</h4>
+
+    </h1>
+</div>
+
+<div id="barra-horizontal"></div>
+
+<div class="services-container">
+    <div class="services-header">
+        RECORRIDOS
+    </div>
+    <ul class="services-list">
+        <li><a href="ibarra.html" style="white-space: nowrap;">Ibarra</a></li>
+        <li>                <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a> </li>
+        <li>                <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>        </li>
+        <li>                <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>        </li>
+        <li>                <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>        </li>
+        <li>                       <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+        </li>
+
+    </ul>
+</div>
+</div>
+
+<div class="text">
+    <h1>Eventos y actividades    </h1>
+    Descubre lo mejor de Imbabura con nuestros exclusivo servicios de transporte para eventos y actividades. Ya sea que estés planificando una escapada privada, una celebración inolvidable o un recorrido educativo, estamos aquí para llevarte de manera segura y cómoda a tu destino. Desde fiestas vibrantes y eventos privados hasta jornadas llenas de aprendizaje, ¡nuestra flota de buses está lista para hacer de tu experiencia algo único!
+
+   
+
+</div>
+<div class ="z">
+<h1>Galería de nuestro servicio</h1>
+</div>
+
+<div class="card">
+    <div class="image-container">
+        <img src="pri.jpg" alt="SANTAGUA DE CHACHIMBIRO"/>
+    </div>
+    <div class="content">
+        <h2>CITY PRIVADO</h2>
+<p>Este bus panorámico recorre los lugares turísticos más importantes de la ciudadades,IBARRA,URCUQUI,OTAVALO<br>,PIMAMPIRO,ANTONIO ANTE,COTACACHI, el recorrido está dirigido por un Audio - guía (español) el mismo que los ayudará a explicar e informar sobre la historia y tradiciones de la ciudad.
+
+    En el bus panorámico podrás apreciar los tejados, balcones, jardines, museos, iglesias, monumentos y de más lugares turísticos de la ciudades de una manera diferente.</p>         
+    </div>
+</div>
+<div class="card second">
+    <div class="image-container">
+        <img src="party.jpg" alt="LAGUNA DE YANACOCHA"/>
+    </div>
+    <div class="content">
+        <h2>CITY PARTY</h2>
+        <p>
+            Este recorrido esta dirigido para turistas o personas que desean disfrutar de la parte cultural de la ciudad y quieran combinarlo con un poco de diversión. En la parte alta del bus puedes apreciar el centro histórico de la ciudad hasta llegar al mirador de turi, al regreso pueden disfrutar en la parte mitad del bus que esta adecuada para bailar.
+
+
+
+        </p>
+    </div>
+</div>
+
+<div class="card third">
+    <div class="image-container">
+        <img src="edu.jpg" alt="LAGUNA DE YANACOCHA"/>
+    </div>
+    <div class="content">
+        <h2>CITYTOUR EDUCATIVO</h2>
+        <p>
+            Este recorrido está dirigido para las instituciones educativas que requieran un tour personalizado para sus estudiantes (40 pasajeros). Con esta alternativa podrás elegir el lugar en donde inicie el recorrido .
+
+        </p>
+    </div>
+</div>
+
+
+<div id="barra-horizontall"></div>
+
+
+
+
+
+<div class="image">
+    <h1>ELLOS SON </h1>
+
+    <h2>Nuestros  Aliados</h2>
+
+    <a href="https://hinomavesa.com.ec/" target="_blank">
+        <img src="hino.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaa"></a>
+       
+        <a href="https://carroceriaspicosa.com/2020/producto.html" target="_blank">  
+    <img src="zicosa.png" alt="Descripción de la imagen" class="imagen-centradaaaaaa"></a>
+   
+    <a href="https://ec.todosnegocios.com/comercial-automotriz-%22vega%22-06-260-6696" target="_blank">
+    <img src="ve.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaaaa"></a>
+
+</div>
+<!-- Contenido imagen -->
+<img src="bs.jpg" alt="Descripción de la imagen" class="imagen-centrada">
+
+
+
+<body class="pagina-modificada">
+    
+    <footer>
+            <p>Sitio web creado por</p>
+            <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+            
+           
+            
+
+        </footer>
+
+        
+
+</footer>
+<img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaaa">
+
+<script>
+   
+    document.addEventListener("DOMContentLoaded", function () {
+    const imageElement = document.querySelector('.imagen-centrada');
+    const textElement = document.querySelector('.text');
+    const servicesContainer = document.querySelector('.services-container');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Ajusta este umbral según tus necesidades
+    });
+
+    // Observa los elementos
+    [imageElement, textElement, servicesContainer].forEach(element => observer.observe(element));
+});
+
+</script>
+
+<script>
+    // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+    document.getElementById('whats-openPopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'block';
+    });
+
+    // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+    document.querySelector('.closePopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'none';
+    });
+
+    // Enviar mensaje al hacer clic en el botón de enviar
+    document.querySelector('.send-msPopup').addEventListener('click', function() {
+        var message = document.getElementById('whats-in').value;
+        var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+
+        // Verificar si se ha ingresado un mensaje
+        if (message.trim() === '') {
+            // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+            window.open('https://wa.me/' + phoneNumber);
+        } else {
+            // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+            window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

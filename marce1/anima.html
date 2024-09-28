@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animación</title>
+    <style>
+        /* Estilos para la imagen de bienvenida */
+        .welcome-image {
+            width: 20vw; /* Ancho del 50% del ancho de la ventana del navegador */
+            height: 12vw; /* Altura automática para mantener la proporción original */
+            position: fixed; /* Fija la imagen en la ventana del navegador */
+            top: 50%; /* Posiciona la imagen en el centro vertical */
+            left: 50%; /* Posiciona la imagen en el centro horizontal */
+            transform: translate(-50%, -50%); /* Centra la imagen en la pantalla */
+            z-index: 9999; /* Asegura que la imagen esté en la capa superior */
+            animation: fadeIn 2s ease-in-out forwards; /* Animación de desvanecimiento */
+        }
+
+        /* Animación para desvanecer la imagen de bienvenida */
+        @keyframes fadeIn {
+            from {
+                opacity: 0; /* Inicio con opacidad 0 */
+            }
+            to {
+                opacity: 1; /* Final con opacidad 1 */
+            }
+        }
+        @media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <!-- Imagen de bienvenida -->
+    <img src="mar.png" alt="Imagen de Bienvenida" class="welcome-image" />      
+    
+    <!-- Llamado al archivo JavaScript -->
+    <script src="animacion.js"></script>
+</body>
+</html>

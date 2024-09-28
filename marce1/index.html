@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Explorado Imbabura</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            height: 100vh;
+            scroll-snap-type: y mandatory; /* Scroll snap para el contenedor */
+            overflow-x: hidden; /* Oculta el scroll horizontal */
+
+        }
+        @media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+
+        header {
+            position: absolute;
+            width: 100%;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1; /* Asegura que el header esté sobre el video */
+            background: transparent; /* Elimina el fondo del header */
+        }
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            color: white; /* Color de los enlaces para que sean visibles sobre el video */
+            position: relative;
+            z-index: 1; /* Asegura que los enlaces estén sobre el video */
+
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .title {
+            color: white; /* Color del título para que sea visible sobre el video */
+        }
+
+        .nav-bottom {
+    bottom: 20px; /* Distancia desde el borde inferior */
+    left: 95%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta la posición para que esté centrado */
+    z-index: 1;
+
+}
+section {
+            width: 100%;
+            height: 100vh; /* Cada sección ocupa toda la ventana */
+            scroll-snap-align: start; /* Alinea el inicio de cada sección al deslizar */
+            position: relative;
+        }
+        header, section, .nav-bottom {
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el tamaño del elemento */
+}
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.subtitle {
+    position: absolute;
+    top: 0; /* Inicia desde la parte superior */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 2;
+    animation: slideDown 2s ease-out forwards; /* Aplica la animación y mantiene el estado final */
+}
+
+@keyframes slideDown {
+    0% {
+        top: 0; /* Empieza en la parte superior */
+        transform: translate(-50%, 0);
+    }
+    100% {
+        top: 50%; /* Posición final en el centro */
+        transform: translate(-50%, -50%);
+    }
+}
+
+.imagen-centrada {
+    display: block;
+    width: 460px; /* Mantén el tamaño deseado de la imagen */
+    height: auto; /* Mantén la proporción de la imagen */
+    margin-top: -800px;
+    margin-left: 1020px;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    border: 6px solid red;
+    
+    /* Animaciones */
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateX(100px); /* Desplazamiento inicial */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Animaciones suaves */
+}
+
+.text {
+    background-color: #ffffff;
+    width: 40%;
+    height: 800px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-left: 180px;
+    text-align: justify;
+    line-height: 1.5;
+
+    /* Animaciones */
+    opacity: 0; /* Ocultar inicialmente */
+    transform: translateX(-100px); /* Desplazamiento inicial */
+    transition: opacity 1s ease-out, transform 1s ease-out; /* Animaciones suaves */
+}
+
+.text h1 {
+    margin-top: 100px;
+    color: rgb(59, 59, 158);
+    margin-left: 0px;
+}
+
+/* Cuando se añade la clase "visible", activa las animaciones */
+.imagen-centrada.visible {
+    opacity: 1; /* Mostrar completamente */
+    transform: translateX(0); /* Regresar a su posición original */
+}
+
+.text.visible {
+    opacity: 1; /* Mostrar completamente */
+    transform: translateX(0); /* Regresar a su posición original */
+}
+
+#barra-horizontall {
+    width: 50px; /* Ancho de la barra */
+    height: 5px; /* Altura de la barra */
+    background-color: red; /* Color de la barra */
+    margin-left: 450px; /* Espacio entre la barra y los botones */
+    margin-top: -790px; 
+    margin-left: 180px; /* Mover hacia la izquierda */
+    
+    /* Evitar que la barra sea afectada por la animación */
+    opacity: 1 !important; /* Forzar la visibilidad */
+    z-index: 10; /* Mantener la barra por encima de otros elementos */
+    position: relative; /* Para asegurarse de que se respete el z-index */
+}
+
+
+.x {
+    color: red;
+    margin-top: 400px;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    z-index: 10;
+    position: relative;
+}
+
+.booking-container {
+    background-color: rgb(171, 150, 150);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -850px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.booking-form {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bus-icon {
+    width: 150px;
+    margin-right: 20px;
+    margin-left: -150px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+select {
+    display: inline-block;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.btn {
+    background-color: #ffc107;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    top: -880px;
+    display: block;
+    margin: 20px auto;
+}
+
+.btn:hover {
+    background-color: #d89b29;
+}
+
+/* Cuando se añade la clase "visible", activa las animaciones */
+.x.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.booking-container.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.image {
+    background-color: #ffffff;
+    width: 40%;
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-left: 450px;
+    text-align: justify;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.image h1 {
+    margin-top: -850px;
+    color: #e4d905;
+    margin-left: -270px;
+}
+
+.image h2 {
+    color: rgb(59, 59, 158);
+    margin-left: -270px;
+    position: relative;
+}
+
+.image h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: red;
+    margin-top: -2px;
+}
+
+.services-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: stretch;
+    margin-top: -330px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30%;
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 8px;
+    text-align: center;
+    height: 100%;
+}
+
+.service-icon {
+    margin-bottom: 10px;
+    font-size: 40px;
+}
+
+.service-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.service-content img {
+    max-width: 30%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.service-content img.carga-image {
+    max-width: 20%;
+}
+
+.service-content a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.service-content p {
+    text-align: center;
+    color: #453d3d;
+}
+
+/* Cuando se añade la clase "visible", activa las animaciones */
+.image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.services-container.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.gallery-title {
+    color: rgb(59, 59, 158);
+    margin-left: 180px;
+    font-size: 2em;
+    margin-bottom: 24px;
+    position: relative;
+    margin-top: -440px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.gallery-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: red;
+    margin-top: 8px;
+}
+
+/* Cuando se añade la clase "visible", activa la animación */
+.gallery-title.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+    
+
+    .carru {
+        display: none; /* Ocultar inicialmente */
+        justify-content: center; /* Centrar imágenes horizontalmente */
+        width: 100%; /* Ancho del carrusel */
+        overflow: hidden;
+    }
+
+    .carru.active {
+        display: flex; /* Mostrar el carrusel activo */
+    }
+
+    .imagen-animadaa {
+        width: 300px; /* Ajusta el tamaño de las imágenes según sea necesario */
+        height: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+        margin: 0 5px; /* Espacio entre imágenes */
+        object-fit: cover;
+    }
+
+    .flechas {
+  display: flex;
+  justify-content: center; /* o flex-start, flex-end */
+  gap: 1000px; /* distancia entre las flechas */
+  margin-top: -150px; /* Ajusta este valor para mover la imagen hacia abajo */
+}
+
+    button {
+        padding: 5px 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    #puntosss {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .numero-punto {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid black;
+    }
+    
+
+    .numero-punto.active {
+        border-color: red;
+    }
+
+    .container {
+    display: flex;
+    gap: 40px;
+    background-image: url('pri.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    margin-top: -475px;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.stat {
+    text-align: center;
+    color: white;
+}
+
+.stat .icon {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+
+.stat .number {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.stat .label {
+    font-size: 1.2rem;
+}
+
+/* Cuando se añade la clase "visible", activa la animación */
+.container.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.gallery-titlee {
+  color: rgb(59, 59, 158);
+  margin-left: 180px;
+  font-size: 2em;
+  margin-bottom: 24px;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100px); /* Inicialmente desplazado hacia la izquierda */
+  transition: opacity 1s ease-out, transform 1s ease-out; /* Suaviza el efecto */
+}
+
+.gallery-titlee::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: red;
+}
+
+.gallery-titleee {
+  color: rgb(3, 3, 5);
+  margin-left: 180px;
+  font-size: 1.7em;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-100px); /* Inicialmente desplazado hacia la izquierda */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Cuando se añade la clase "visible", activa la animación */
+.gallery-titlee.visible,
+.gallery-titleee.visible {
+  opacity: 1;
+  transform: translateX(0); /* Vuelve a la posición original */
+}
+/* Imágenes y textos con animación */
+.slider-image,
+h2,
+p {
+  opacity: 0;
+  transform: translateX(-100px); /* Inicia desplazado a la izquierda */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Cuando los elementos son visibles en el viewport */
+.visible {
+  opacity: 1;
+  transform: translateX(0); /* Regresa a su posición original */
+}
+
+/* Animación en el círculo al hacer hover */
+.circle {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 30px;
+  margin-left: 10px;
+  position: relative;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.circle:hover {
+  animation: border-rotate 1s linear forwards;
+}
+
+@keyframes border-rotate {
+  0% {
+    border-color: transparent;
+  }
+  100% {
+    border-color: red;
+  }
+}
+
+.arrow {
+  color: black;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.arrow:hover {
+  color: red;
+}
+
+
+
+  .imagen-centradaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: -205px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        
+.imagen-centradaaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -200px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 268px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .imagen-centradaaaaaaa {
+            display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -120px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 720px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+       
+        .imagee {
+  background-color: #ffffff;
+  width: 40%;
+  height: 420px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 450px;
+  text-align: justify;
+  line-height: 1.5;
+}
+
+.imagee h1 {
+  margin-top: 50px;
+  color: #e4d905;
+  margin-left: -270px;
+}
+
+.imagee h2 {
+  color: rgb(59, 59, 158);
+  margin-left: -270px;
+  position: relative; /* Necesario para la posición absoluta del ::after */
+}
+
+.imagee h2::after {
+  content: "";
+  display: block;
+  width: 60px; /* Ajusta el ancho de la barra */
+  height: 4px; /* Ajusta el grosor de la barra */
+  background-color: red; /* Color de la barra */
+  margin-top: -2px; /* Espacio entre el texto y la barra */
+}
+.visible {
+  opacity: 1;
+  transform: translateX(0); /* Regresa a su posición original */
+}
+footer  {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    bottom: -590px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    margin-left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    margin-top:     -38px; /* Ajusta este valor para mover la imagen hacia abajo */
+    position: flex;
+
+
+}
+footer p1 {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+
+.imagen-centradaaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -0px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 800px;	
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="marr.png" alt="Logo" class="logo">
+        <h1 class="title">
+            EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+        </h1>
+        
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link active" id="inicio">INICIO</a>
+            <div class="nav-link" id="servicios">
+                <a href="#" class="nav-link">SERVICIOS</a>
+                <div class="sub-links">
+                    <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                    <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                    <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                    <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+                </div>
+            </div>
+            <a href="galeria.html" class="nav-link" id="galeria">GALERÍA</a>
+            <div class="nav-link" id="Recorridos">
+                <a href="#" class="nav-link">RECORRIDOS</a>
+                <div class="sub-links">
+                    <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                    <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                    <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante</a>
+                    <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                    <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                    <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Video de fondo -->
+<!-- Video de fondo -->
+<section>
+    <video src="viii.mp4" autoplay muted loop></video>
+    <h1 class="subtitle">Transportamos felicidad</h1>
+</section>
+<!-- Contenedor de imágenes y slider -->
+<section>
+    <div class="image-slider">
+        <div class="slider-wrapper">
+            <div class="text">
+                <h1>Conócenos            </h1>
+            Una unidad con el propósito de promover y mostrar la belleza de la provincia de Imbabura,
+            Nuestro bus turístico está dedicado a ofrecer una experiencia única, recorriendo los caminos y paisajes más emblemáticos de Imbabura, 
+            llevando su riqueza cultural, histórica y natural a cada visitante, tanto a nivel nacional como internacional
+            ,siempre guiados por nuestros valores de servicio, calidad y compromiso.       
+                </div>
+                <!-- Contenido imagen -->
+        </div>
+    </div>
+    <img src="bs.jpg" alt="Descripción de la imagen" class="imagen-centrada">
+
+   
+    
+    
+</section>
+<div id="barra-horizontall"></div>
+<div  class="x">
+    <h1>CONSULTA NUESTROS SERVICIOS Y FRECUENCIAS</h1>
+</div>
+<!-- Sección de segunda imagen u otro contenido -->
+<section>
+</section>
+<div class="booking-container">
+    <div class="booking-form">
+        <img src="baa.png" alt="Bus Icon" class="bus-icon">
+        <div class="form-group">
+            <label for="from">DESDE</label>
+            <select id="from">
+                <option value="Ibarra">Ibarra</option>
+            
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="to">HASTA</label>
+            <select id="to">
+                <option value="Ibarra">Ibarra</option>
+                <option value="Cotacachi">Cotacachi</option>
+                <option value="Antonio Ante">Antonio Ante</option>
+                <option value="Urcuqui">Urcuqui</option>
+                <option value="Pimampiro">Pimampiro</option>
+                <option value="Otavalo">Otavalo</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<!-- Botón fuera del recuadro -->
+<button id="whatsapp-button" class="btn">COMPRAR BOLETOS</button>
+
+<section>
+    <div class="image">
+        <h1>CONOCE LO QUE OFRECEMOS</h1>
+        <h2>Nuestros Servicios</h2>
+    </div>
+    
+
+    <div class="services-container">
+        <div class="service-item">
+            <div class="service-icon">
+                <!-- Ícono de Transporte Terrestre -->
+            </div>
+            <div class="service-content">
+                <a href="terrestre.html">
+                    <h3>Transporte Terrestre</h3>
+                    <img src="baaa.png" alt="Logo Transporte Loja">
+                </a>
+                <p>En Rtours nuestra meta es proporcionar el mejor servicio de transporte en un marco de excelencia y mejora continua.</p>
+            </div>
+        </div>
+    
+        <div class="service-item">
+            <div class="service-icon">
+                <!-- Ícono de Taller de Carrocería -->
+            </div>
+    
+            <div class="service-content">
+                <a href="carga.html">
+                    <h3>Transporte de Carga</h3>
+                    <img src="carga.png" alt="Logo Taller" class="carga-image">
+                </a>
+                <p>Realizamos envíos a través de nuestro servicio de carga y encomiendas exclusivo.</p>
+            </div>
+        </div>
+    
+        <div class="service-item">
+            <div class="service-icon">
+                <!-- Ícono de Taller de Carrocería -->
+            </div>
+    
+            <div class="service-content">
+                <a href="carga.html">
+                    <h3>Eventos y Actividades</h3>
+                    <img src="acc.png" alt="Logo Taller">
+                </a>
+                <p>Nuestros exclusivo servicios de transporte para eventos y actividades.</p>
+            </div>
+        </div>
+    
+        <div class="service-item">
+            <div class="service-icon">
+                <!-- Ícono de Taller de Carrocería -->
+            </div>
+    
+            <div class="service-content">
+                <a href="educativos.html">
+                    <h3>Recorridos Educativos</h3>
+                    <img src="ree.png" alt="Logo Taller">
+                </a>
+                <p>Recorridos dirigido para las instituciones educativas que requieran un tour personalizado para sus estudiantes.</p>
+            </div>
+        </div>
+    </div>
+    
+   
+</section>
+<section>
+    <h1 class="gallery-title">Galería</h1>
+
+<div id="carrusel11" class="carru active">
+    <img src="party.jpg" alt="Descripción de la imagen 1" class="imagen-animadaa" loading="lazy">
+    <img src="pri.jpg" alt="Descripción de la imagen 2" class="imagen-animadaa" loading="lazy">
+    <img src="41.jpg" alt="Descripción de la imagen 3" class="imagen-animadaa" loading="lazy">
+</div>
+
+<!-- Carrusel 12 -->
+<div id="carrusel12" class="carru">
+    <img src="41.jpg" alt="Descripción de la imagen 1" class="imagen-animadaa" loading="lazy">
+    <img src="42.jpg" alt="Descripción de la imagen 2" class="imagen-animadaa" loading="lazy">
+    <img src="43.jpg" alt="Descripción de la imagen 3" class="imagen-animadaa" loading="lazy">
+</div>
+
+<!-- Puntos de navegación -->
+<div id="puntosss"></div>
+
+<!-- Flechas de navegación -->
+<div class="flechas">
+    <img id="atrass" src="atrass.svg" alt="atrass" loading="lazy">
+    <img id="adelantee" src="adelantee.svg" alt="adelantee" loading="lazy">
+</div>
+</section>
+
+<div class="container">
+    <div class="stat">
+        <div class="icon">🏢</div>
+        <div class="number">+1</div>
+        <div class="label">AGENCIAS</div>
+    </div>
+    <div class="stat">
+        <div class="icon">🚌</div>
+        <div class="number">+1</div>
+        <div class="label">UNIDADES</div>
+    </div>
+    <div class="stat">
+        <div class="icon">📍</div>
+        <div class="number">+5</div>
+        <div class="label">RUTAS</div>
+    </div>
+    <div class="stat">
+        <div class="icon">🧳</div>
+        <div class="number">+37</div>
+        <div class="label">PASAJEROS </div>
+    </div>
+</div>
+<h1 class="gallery-titlee">Rutas y Destinos</h1>
+<h3 class="gallery-titleee">"Ofrecemos horarios flexibles durante todo el día para que puedas viajar cómodo y seguro a nuestros destinos en Imbabura."
+</h3>
+
+<br><br>
+<section style="display: flex; flex-wrap: wrap; width: 100%;">
+    <!-- Primera fila de imágenes -->
+    <div style="position: relative; width: 50%; overflow: hidden;">
+      <img src="ya.jpg" alt="Logo" class="slider-image" id="image2" style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+        <h2 style="margin: 0;">IBARRA</h2>
+        <p style="margin-top: 40px; display: inline-block;">
+          <a href="ibarra.html" style="text-decoration: none; color: white;">
+            Para saber más
+            <span class="circle" style="display: inline-block; margin-left: 10px;">
+              <span class="arrow" style="font-size: 20px;">&#10148;</span>
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  
+    <div style="position: relative; width: 50%; overflow: hidden;">
+      <img src="peguche.jpg" alt="Logo" class="slider-image" id="image3" style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+        <h2 style="margin: 0;">OTAVALO</h2>
+        <p style="margin-top: 40px; display: inline-block;">
+          <a href="otavalo.html" style="text-decoration: none; color: white;">
+            Para saber más
+            <span class="circle" style="display: inline-block; margin-left: 10px;">
+              <span class="arrow" style="font-size: 20px;">&#10148;</span>
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  
+    <!-- Segunda fila de imágenes -->
+    <div style="position: relative; width: 50%; overflow: hidden;">
+      <img src="fabrica_imba.jpg" alt="Logo" class="slider-image" id="image4" style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+        <h2 style="margin: 0;">ANTONIO ANTE</h2>
+        <p style="margin-top: 40px; display: inline-block;">
+          <a href="antonioante.html" style="text-decoration: none; color: white;">
+            Para saber más
+            <span class="circle" style="display: inline-block; margin-left: 10px;">
+              <span class="arrow" style="font-size: 20px;">&#10148;</span>
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+  
+    <div style="position: relative; width: 50%; overflow: hidden;">
+      <img src="cuicocha.jpg" alt="Logo" class="slider-image" id="image5" style="width: 100%; height: 100%; object-fit: cover;">
+      <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+        <h2 style="margin: 0;">COTACACHI</h2>
+        <p style="margin-top: 40px; display: inline-block;">
+          <a href="cotacachi.html" style="text-decoration: none; color: white;">
+            Para saber más
+            <span class="circle" style="display: inline-block; margin-left: 10px;">
+              <span class="arrow" style="font-size: 20px;">&#10148;</span>
+            </span>
+          </a>
+        </p>
+      </div>
+    </div>
+
+     <!-- 3fila de imágenes -->
+     <div style="position: relative; width: 50%; overflow: hidden;">
+        <img src="negra.jpg" alt="Logo" class="slider-image" id="image4" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+          <h2 style="margin: 0;">PIMAMPIRO</h2>
+          <p style="margin-top: 40px; display: inline-block;">
+            <a href="pimampiro.html" style="text-decoration: none; color: white;">
+              Para saber más
+              <span class="circle" style="display: inline-block; margin-left: 10px;">
+                <span class="arrow" style="font-size: 20px;">&#10148;</span>
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
+    
+      <div style="position: relative; width: 50%; overflow: hidden;">
+        <img src="chachi.jpg" alt="Logo" class="slider-image" id="image5" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+          <h2 style="margin: 0;">URCUQUÍ</h2>
+          <p style="margin-top: 40px; display: inline-block;">
+            <a href="urcuqui.html" style="text-decoration: none; color: white;">
+              Para saber más
+              <span class="circle" style="display: inline-block; margin-left: 10px;">
+                <span class="arrow" style="font-size: 20px;">&#10148;</span>
+              </span>
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="imagee">
+        <h1>ELLOS SON        </h1>
+        <h2>Nuestros Aliados        </h2>
+        <a href="https://hinomavesa.com.ec/" target="_blank">
+            <img src="hino.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaa"></a>
+           
+            <a href="https://carroceriaspicosa.com/2020/producto.html" target="_blank">  
+        <img src="zicosa.png" alt="Descripción de la imagen" class="imagen-centradaaaaaa"></a>
+       
+        <a href="https://ec.todosnegocios.com/comercial-automotriz-%22vega%22-06-260-6696" target="_blank">
+        <img src="ve.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaaaa"></a>
+    </div>
+
+    <footer>
+        <p1>Sitio web creado por</p1>
+        <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+        
+
+        
+
+    </footer>
+
+
+
+        
+    
+    </div>
+    <img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaaa">
+
+  </section>
+
+  
+  
+  
+  
+  
+<script>
+    document.getElementById('whatsapp-button').addEventListener('click', function() {
+        var from = document.getElementById('from').value;
+        var to = document.getElementById('to').value;
+        var message = `Hola, quiero comprar boletos desde ${from} hasta ${to}.`;
+
+        if (from && to) {
+            window.open('https://wa.me/521557153381?text=' + encodeURIComponent(message), '_blank');
+        } else {
+            alert('Por favor, selecciona ambos destinos.');
+        }
+    });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elementos del DOM
+        const carruseles = [document.getElementById('carrusel11'), document.getElementById('carrusel12')];
+        const adelantee = document.getElementById('adelantee');
+        const atrass = document.getElementById('atrass');
+        const puntosss = document.getElementById('puntosss');
+
+        // Índice de carrusel actual
+        let carruselActual = 0;
+
+        // Muestra el carrusel correspondiente
+        function mostrarCarrusel(index) {
+            carruseles.forEach((carrusel, i) => {
+                carrusel.classList.toggle('active', i === index);
+            });
+            actualizarPuntos(index);
+        }
+
+        // Cambia el carrusel cuando se hace clic en el botón adelante
+        adelantee.addEventListener('click', function() {
+            carruselActual = (carruselActual + 1) % carruseles.length;
+            mostrarCarrusel(carruselActual);
+        });
+
+        // Cambia el carrusel cuando se hace clic en el botón atrás
+        atrass.addEventListener('click', function() {
+            carruselActual = (carruselActual - 1 + carruseles.length) % carruseles.length;
+            mostrarCarrusel(carruselActual);
+        });
+
+        // Inicializa los puntos de navegación
+        function inicializarPuntos() {
+            puntosss.innerHTML = ''; // Limpia los puntos anteriores
+            for (let i = 0; i < carruseles.length; i++) {
+                let punto = document.createElement('button');
+                punto.classList.add('numero-punto');
+                punto.addEventListener('click', function() {
+                    carruselActual = i;
+                    mostrarCarrusel(carruselActual);
+                });
+                puntosss.appendChild(punto);
+            }
+            actualizarPuntos(carruselActual);
+        }
+
+        // Actualiza el estilo de los puntos
+        function actualizarPuntos(index) {
+            let puntos = document.querySelectorAll('.numero-punto');
+            puntos.forEach(function(punto, i) {
+                punto.classList.toggle('active', i === index);
+            });
+        }
+
+        // Inicializa el carrusel
+        mostrarCarrusel(carruselActual);
+        inicializarPuntos();
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    const imageElement = document.querySelector('.imagen-centrada');
+    const textElement = document.querySelector('.text');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Ajusta este umbral según tus necesidades
+    });
+
+    // Observa los elementos
+    observer.observe(imageElement);
+    observer.observe(textElement);
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const xElement = document.querySelector('.x');
+    const bookingContainerElement = document.querySelector('.booking-container');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    // Observa los elementos
+    observer.observe(xElement);
+    observer.observe(bookingContainerElement);
+});
+
+    
+document.addEventListener("DOMContentLoaded", function () {
+    const imageElement = document.querySelector('.image');
+    const servicesContainerElement = document.querySelector('.services-container');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(imageElement);
+    observer.observe(servicesContainerElement);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Elementos del DOM
+    const galleryTitle = document.querySelector('.gallery-title');
+
+    // Añadir animación al título de la galería
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(galleryTitle);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const container = document.querySelector('.container');
+
+    // Añadir animación a la sección cuando sea visible
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(container);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const galleryTitlee = document.querySelector('.gallery-titlee');
+    const galleryTitleee = document.querySelector('.gallery-titleee');
+
+    // Añadir animación cuando los títulos son visibles
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    observer.observe(galleryTitlee);
+    observer.observe(galleryTitleee);
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elements = document.querySelectorAll('.slider-image, h2, p');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
+});
+
+
+
+
+</script>
+
+<!-- Contenido principal -->
+<div class="nav-bottom">
+    <div class="popup-whatsapp fadeIn">
+        <div class="content-whatsapp -top">
+            <button type="button" class="closePopup">
+                <i class="material-icons icon-font-color">close</i>
+            </button> 
+            <p style="display: inline-block;">
+                <img src="secretary.png" width="50" style="vertical-align: middle;">
+                <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+            </p>
+        </div>
+        <div class="content-whatsapp -bottom">
+            <input class="whats-input" id="whats-in" type="text" placeholder="Enviar mensaje..." />
+            <button class="send-msPopup" id="send-btn" type="button">
+                <i class="material-icons icon-font-color--black">send</i>
+            </button>
+        </div>
+    </div>
+    <button type="button" id="whats-openPopup" class="whatsapp-button">
+        <div class="float">
+            <i class="fa fa-whatsapp my-float"></i>
+        </div>
+    </button>
+    <div class="circle-anime"></div>
+</div>
+<script>
+    // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+    document.getElementById('whats-openPopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'block';
+    });
+
+    // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+    document.querySelector('.closePopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'none';
+    });
+
+    // Enviar mensaje al hacer clic en el botón de enviar
+    document.querySelector('.send-msPopup').addEventListener('click', function() {
+        var message = document.getElementById('whats-in').value;
+        var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+
+        // Verificar si se ha ingresado un mensaje
+        if (message.trim() === '') {
+            // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+            window.open('https://wa.me/' + phoneNumber);
+        } else {
+            // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+            window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+        }
+    });
+</script>
+
+
+    <script src="script2.js">
+
+
+
+    </script>
+</body>
+</html>

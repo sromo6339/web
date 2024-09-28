@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para el encabezado */
+      
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+        .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+@media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+        header {
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 40px;
+            position: relative;
+        }
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces al pasar el mouse */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+
+        .div {
+  background-color: rgb(75, 83, 163);
+  width: 100%; /* Ancho del 100% del contenedor padre */
+  height: 200px; /* Altura de 50px */
+  margin-top: -21px; /* Ajusta este valor para mover la imagen hacia abajo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.div h1 {
+  color: #e4d905; /* Cambia el color del texto a blanco */
+  font-size: 28px; /* Cambia el tamaño del texto a 36px */
+  text-align: center; /* Centra el texto horizontalmente */
+margin-left: 1px;
+}
+
+.div h3{
+    color: #fff; /* Cambia el color del texto a blanco */
+  font-size: 35px; /* Cambia el tamaño del texto a 36px */
+  text-align: center; /* Centra el texto horizontalmente */
+
+}
+.div h4{
+    color: #fff; /* Cambia el color del texto a blanco */
+  font-size: 20px; /* Cambia el tamaño del texto a 36px */
+  text-align: center; /* Centra el texto horizontalmente */
+
+}
+
+
+#barra-horizontal {
+    width: 300px; /* Ancho de la barra */
+    height: 3px; /* Altura de la barra */
+    background-color: red; /* Color de la barra */
+    margin-left: 450px; /* Espacio entre la barra y los botones */
+    margin-top: -90px; 
+    margin-left: 680px; /* Mover hacia la izquierda */
+    
+
+}
+
+
+.services-container {
+    width: 300px;
+    border: 1px solid #ccc;
+    background-color: white;
+    margin-top: 150px; 
+    margin-left: 100px; /* Mover hacia la izquierda */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.services-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+
+
+    
+
+}
+
+.services-header {
+    background-color: #b71c1c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.services-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.services-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.services-list li:hover {
+    background-color: #f1f1f1;
+}
+
+.services-list li::before {
+    content: "» ";
+    color: #b71c1c;
+}
+
+
+.text {
+  background-color: ffffff;
+  width: 40%; /* Ancho del 100% del contenedor padre */
+  height: 480px; /* Altura de 50px */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 450px; /* Mover hacia la izquierda */
+  text-align: justify;
+    line-height: 1.5; /* espacio de 0.5 entre líneas */
+
+ /* Animaciones */
+ opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+
+
+}
+.text.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.text h1{
+margin-top: -200px; /* Ajusta este valor para mover la imagen hacia abajo */
+color:rgb(59, 59, 158);
+margin-left: -7px;
+}
+.text h2{
+    color:rgb(59, 59, 158);
+
+}
+
+.imagen-centrada {
+            display: block;
+            width: 460px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -480px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 1150px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+            border: 6px solid red; /* Añade un borde rojo de 10px de grosor */
+            opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.imagen-centrada.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+        
+
+        .carru {
+        display: none; /* Ocultar inicialmente */
+        justify-content: center; /* Centrar imágenes horizontalmente */
+        width: 100%; /* Ancho del carrusel */
+        overflow: hidden;
+    }
+
+    .carru.active {
+        display: flex; /* Mostrar el carrusel activo */
+    }
+
+    .imagen-animadaa {
+        width: 300px; /* Ajusta el tamaño de las imágenes según sea necesario */
+        height: 200px; /* Ajusta el tamaño de las imágenes según sea necesario */
+        margin: 0 5px; /* Espacio entre imágenes */
+        object-fit: cover;
+    }
+
+    .flechas {
+  display: flex;
+  justify-content: center; /* o flex-start, flex-end */
+  gap: 1000px; /* distancia entre las flechas */
+  margin-top: -150px; /* Ajusta este valor para mover la imagen hacia abajo */
+}
+
+    button {
+        padding: 5px 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    #puntosss {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .numero-punto {
+        width: 10px;
+        height: 10px;
+        margin: 0 5px;
+        background-color: white;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid black;
+    }
+    
+
+    .numero-punto.active {
+        border-color: red;
+    }
+    h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+
+    }
+
+    .imagen-centradaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: -205px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        
+.imagen-centradaaaaaa {
+            display: block;
+            width: 200px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -200px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 268px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+
+        .imagen-centradaaaaaaa {
+            display: block;
+            width: 350px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: -120px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: 720px;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+        }
+        .image {
+  background-color: ffffff;
+  width: 40%; /* Ancho del 100% del contenedor padre */
+  height: 420px; /* Altura de 50px */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  margin-left: 450px; /* Mover hacia la izquierda */
+  text-align: justify;
+    line-height: 1.5; /* espacio de 0.5 entre líneas */
+
+
+
+
+}
+.image h1{
+margin-top: 100px; /* Ajusta este valor para mover la imagen hacia abajo */
+color: #e4d905;
+margin-left: -350px; /* Mover hacia la izquierda */
+
+}
+.image h2{
+    color:rgb(59, 59, 158);
+    margin-left: -350px; /* Mover hacia la izquierda */
+
+}
+
+
+
+footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    bottom: -590px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    margin-left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+    position: flex;
+
+
+}
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+.imagen-centradaaaa {
+            display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            margin-top: 1px; /* Ajusta este valor para mover la imagen hacia abajo */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="mar.png" alt="Logo" class="logo">
+    <h1 class="title">
+        EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+    </h1>
+    
+    
+    <nav class="nav-links">
+        <a href="index.html" style="color: blue;"class="nav-link " id="inicio">INICIO</a>
+        <div class="nav-link active" id="servicios">
+            <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+           
+            <div class="sub-links">
+                <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+            </div>
+        </div>
+        <a href="galeria.html" style="color: blue;" class="nav-link" id="galeria">GALERÍA</a>            <div class="nav-link" id="Recorridos">
+            <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+           
+            <div class="sub-links">
+                <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>
+                <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+
+            </div>
+    </nav>
+</header>
+
+<div class="div">
+    <h1>CONOCE LO QUE OFRECEMOS
+        <br>
+        <h3>¡Explora Imbabura con Comodidad y Estilo!</h3>
+        
+        
+        
+        <h4>Ponemos a disposición de nuestros usuarios, siempre lo mejor de nosotros</h4>
+
+    </h1>
+</div>
+
+<div id="barra-horizontal"></div>
+<!-- Aquí puedes agregar más contenido si lo deseas -->
+<div class="services-container">
+    <div class="services-header">
+        RECORRIDOS
+    </div>
+    <ul class="services-list">
+        <li><a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a></li>
+        <li>                <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a> </li>
+        <li>                <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>        </li>
+        <li>                <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>        </li>
+     
+        </li>
+
+    </ul>
+</div>
+</div>
+
+
+
+<div class="text">
+    <h1>Transporte de Carga y Encomiendas    </h1>
+    "Realizamos envíos a través de nuestro servicio de carga y encomiendas exclusivo, con conexiones rápidas entre cantones y destinos. Nuestro equipo técnico y operativo está altamente capacitado para asegurar la seguridad de sus encomiendas. Ofrecemos la mejor logística para garantizar que su envío viaje en primera clase."
+   
+
+</div>
+<!-- Contenido imagen -->
+<img src="bs.jpg" alt="Descripción de la imagen" class="imagen-centrada">
+
+
+<h1>Galería de nuestro servicio</h1>
+
+<div id="carrusel11" class="carru active">
+    <img src="party.jpg" alt="Descripción de la imagen 1" class="imagen-animadaa" loading="lazy">
+    <img src="pri.jpg" alt="Descripción de la imagen 2" class="imagen-animadaa" loading="lazy">
+    <img src="41.jpg" alt="Descripción de la imagen 3" class="imagen-animadaa" loading="lazy">
+</div>
+
+<!-- Carrusel 12 -->
+<div id="carrusel12" class="carru">
+    <img src="41.jpg" alt="Descripción de la imagen 1" class="imagen-animadaa" loading="lazy">
+    <img src="42.jpg" alt="Descripción de la imagen 2" class="imagen-animadaa" loading="lazy">
+    <img src="43.jpg" alt="Descripción de la imagen 3" class="imagen-animadaa" loading="lazy">
+</div>
+
+<!-- Puntos de navegación -->
+<div id="puntosss"></div>
+
+<!-- Flechas de navegación -->
+<div class="flechas">
+    <img id="atrass" src="atrass.svg" alt="atrass" loading="lazy">
+    <img id="adelantee" src="adelantee.svg" alt="adelantee" loading="lazy">
+</div>
+
+
+
+
+
+
+<!-- Contenido principal -->
+<div class="image">
+    <h1>ELLOS SON </h1>
+
+    <h2>Nuestros  Aliados</h2>
+
+    <a href="https://hinomavesa.com.ec/" target="_blank">
+        <img src="hino.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaa"></a>
+       
+        <a href="https://carroceriaspicosa.com/2020/producto.html" target="_blank">  
+    <img src="zicosa.png" alt="Descripción de la imagen" class="imagen-centradaaaaaa"></a>
+   
+    <a href="https://ec.todosnegocios.com/comercial-automotriz-%22vega%22-06-260-6696" target="_blank">
+    <img src="ve.jpg" alt="Descripción de la imagen" class="imagen-centradaaaaaaa"></a>
+
+
+</div>
+
+<body class="pagina-modificada">
+    
+    <footer>
+            <p>Sitio web creado por</p>
+            <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+            
+           
+            
+
+        </footer>
+
+        
+
+</footer>
+<img src="lol.png" alt="Descripción de la imagen" class="imagen-centradaaaa">
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elementos del DOM
+        const carruseles = [document.getElementById('carrusel11'), document.getElementById('carrusel12')];
+        const adelantee = document.getElementById('adelantee');
+        const atrass = document.getElementById('atrass');
+        const puntosss = document.getElementById('puntosss');
+
+        // Índice de carrusel actual
+        let carruselActual = 0;
+
+        // Muestra el carrusel correspondiente
+        function mostrarCarrusel(index) {
+            carruseles.forEach((carrusel, i) => {
+                carrusel.classList.toggle('active', i === index);
+            });
+            actualizarPuntos(index);
+        }
+
+        // Cambia el carrusel cuando se hace clic en el botón adelante
+        adelantee.addEventListener('click', function() {
+            carruselActual = (carruselActual + 1) % carruseles.length;
+            mostrarCarrusel(carruselActual);
+        });
+
+        // Cambia el carrusel cuando se hace clic en el botón atrás
+        atrass.addEventListener('click', function() {
+            carruselActual = (carruselActual - 1 + carruseles.length) % carruseles.length;
+            mostrarCarrusel(carruselActual);
+        });
+
+        // Inicializa los puntos de navegación
+        function inicializarPuntos() {
+            puntosss.innerHTML = ''; // Limpia los puntos anteriores
+            for (let i = 0; i < carruseles.length; i++) {
+                let punto = document.createElement('button');
+                punto.classList.add('numero-punto');
+                punto.addEventListener('click', function() {
+                    carruselActual = i;
+                    mostrarCarrusel(carruselActual);
+                });
+                puntosss.appendChild(punto);
+            }
+            actualizarPuntos(carruselActual);
+        }
+
+        // Actualiza el estilo de los puntos
+        function actualizarPuntos(index) {
+            let puntos = document.querySelectorAll('.numero-punto');
+            puntos.forEach(function(punto, i) {
+                punto.classList.toggle('active', i === index);
+            });
+        }
+
+        // Inicializa el carrusel
+        mostrarCarrusel(carruselActual);
+        inicializarPuntos();
+    });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const imageElement = document.querySelector('.imagen-centrada');
+    const textElement = document.querySelector('.text');
+    const servicesContainer = document.querySelector('.services-container');
+    const headerElement = document.querySelector('h1'); // Selecciona el <h1> si hay más de uno en el DOM
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Ajusta este umbral según tus necesidades
+    });
+
+    // Observa los elementos
+    [imageElement, textElement, servicesContainer].forEach(element => observer.observe(element));
+});
+
+</script>
+
+
+
+
+<!-- Contenido principal -->
+<div class="nav-bottom">
+    <div class="popup-whatsapp fadeIn">
+        <div class="content-whatsapp -top">
+            <button type="button" class="closePopup">
+                <i class="material-icons icon-font-color">close</i>
+            </button> 
+            <p style="display: inline-block;">
+                <img src="secretary.png" width="50" style="vertical-align: middle;">
+                <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+            </p>
+        </div>
+        <div class="content-whatsapp -bottom">
+            <input class="whats-input" id="whats-in" type="text" placeholder="Enviar mensaje..." />
+            <button class="send-msPopup" id="send-btn" type="button">
+                <i class="material-icons icon-font-color--black">send</i>
+            </button>
+        </div>
+    </div>
+    <button type="button" id="whats-openPopup" class="whatsapp-button">
+        <div class="float">
+            <i class="fa fa-whatsapp my-float"></i>
+        </div>
+    </button>
+    <div class="circle-anime"></div>
+</div>
+
+<script>
+    // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+    document.getElementById('whats-openPopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'block';
+    });
+
+    // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+    document.querySelector('.closePopup').addEventListener('click', function() {
+        document.querySelector('.popup-whatsapp').style.display = 'none';
+    });
+
+    // Enviar mensaje al hacer clic en el botón de enviar
+    document.querySelector('.send-msPopup').addEventListener('click', function() {
+        var message = document.getElementById('whats-in').value;
+        var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+
+        // Verificar si se ha ingresado un mensaje
+        if (message.trim() === '') {
+            // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+            window.open('https://wa.me/' + phoneNumber);
+        } else {
+            // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+            window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+        }
+    });
+</script>
+
+
+
+</body>
+</html>

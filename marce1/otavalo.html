@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="whats.css">
+    <link rel="stylesheet" href="whats2.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+
+        
+
+        /* Estilos para el encabezado sin imagen, cambia a la izquierda */
+        header {
+            text-align: left; /* Alinea el texto a la izquierda */
+            background-color: #f0f0f0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Estilos para los enlaces de navegación */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Alinea los enlaces de navegación al centro */
+            flex-grow: 1; /* Para que los enlaces ocupen el espacio restante */
+        }
+        @media (max-width: 767px) { 
+    .desktop {
+        display: none;
+    }
+    .tablet {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 990px) {
+    .desktop {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+@media (min-width: 991px) {
+    .tablet {
+        display: none;
+    }
+    .movil {
+        display: none;
+    }
+}
+
+        .nav-link {
+            font-size: 18px;
+            text-decoration: none;
+            margin: 0 40px; /* Añade espacio entre los enlaces */
+            position: relative;
+        }
+
+        /* Subrayado al pasar el mouse */
+        .nav-link:hover::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 2px;
+            background-color: red;
+        }
+
+        /* Estilos para los enlaces activos */
+        .nav-link.active,
+        .nav-link.active:hover::after {
+            border-bottom: 4px solid red;
+        }
+
+        /* Estilos para los cajones de subenlaces */
+        .sub-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #ac9279;
+            padding: 10px 5px;
+        }
+
+        .nav-link:hover .sub-links {
+            display: block;
+        }
+
+        /* Estilos para los subenlaces */
+        .sub-links a {
+            font-size: 20px;
+            width: 200px;
+            display: inline-block;
+            text-align: center;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        /* Estilos para los subenlaces,cambia el color del subenlace activo cuando pase el mouse por subenlace navegacion */
+        .sub-links a:hover {
+            background-color: floralwhite; /* Cambiar el color de fondo del sub-enlace a gris claro al pasar el mouse */
+        }
+
+
+/* sub footer 2 */
+
+        footer {
+    color: blue;
+    width: 80%; /* Ancho del 100% del contenedor padre */
+    height: 70px; /* Altura de 50px */
+    background-color: lightgray;
+    position: absolute;
+    bottom: -224px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+    left: 0;
+    text-align: center;
+    left: 160px; /* Ajusta este valor para mover la imagen hacia la derecha */
+    padding: 0 20px; /* Añade un poco de espacio alrededor de los elementos */
+    justify-content: space-between; /* Alinea los elementos al principio y al final */
+    align-items: center; /* Centra verticalmente los elementos */
+    display: flex;
+
+
+}
+footer p {
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+#sromo-link {
+    color: blue;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+#sromo-link:hover {
+    color: orange;
+}
+
+
+#copyright {
+    display: block; /* Asegura que aparezca en una línea separada */
+}
+
+
+      
+h1{
+        color:rgb(59, 59, 158);
+        margin-left: 90px; /* Mover hacia la izquierda */
+
+    }
+
+       
+        h2 {
+            position: relative;
+            animation: slideIn 2s ease-out forwards;
+            font-size: 2.5em;
+            text-align: center;
+            margin-top: -830px; /* Añade esta línea para bajar los elementos */
+            color: blue;
+            
+        }
+
+        @keyframes slideIn {
+            from {
+                right: -100%;
+            }
+            to {
+                right: 0;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="mar.png" alt="Logo" class="logo">
+        <h1 class="title">
+        EXPLORANDO IMBABURA<br>NATURALEZA Y TRADICIÓN
+        </h1>
+
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link" id="inicio" style="color: blue;">INICIO</a>
+            <div class="nav-link " id="servicios">
+                <a href="#" style="color: blue; text-decoration: none;">SERVICIOS</a>
+               
+                <div class="sub-links">
+                    <a href="terrestre.html" style="white-space: nowrap;">Transporte Terrestre</a>
+                    <a href="carga.html" style="white-space: nowrap;">Transporte de Carga</a>
+                    <a href="eventosyactividades.html" style="white-space: nowrap;">Eventos y Actividades</a>
+                    <a href="educativos.html" style="white-space: nowrap;">Recorridos Educativos</a>
+                </div>
+            </div>
+            <a href="galeria.html" class="nav-link" id="galeria" style="color: blue;">GALERÍA</a>
+            <div class="nav-link active" id="recorridos">
+                <a href="#" style="color: blue; text-decoration: none;">RECORRIDOS</a>
+               
+                <div class="sub-links">
+                    <a href="ibarra.html" style="white-space: nowrap;">Ibarra</a>
+                    <a href="otavalo.html" style="white-space: nowrap;">Otavalo</a>
+                    <a href="antonioante.html" style="white-space: nowrap;">Antonio Ante </a>
+                    <a href="cotacachi.html" style="white-space: nowrap;">Cotacachi</a>
+                    <a href="pimampiro.html" style="white-space: nowrap;">Pimampiro</a>
+                    <a href="urcuqui.html" style="white-space: nowrap;">Urcuquí</a>
+
+                </div>
+        </nav>
+    </header>
+
+    <!-- Aquí puedes agregar más contenido si lo deseas -->
+    <!-- contenido para vista otavalo -->
+
+    
+    
+        <body class="pagina-modificada">
+            
+            <footer>
+                    <p>Sitio web creado por</p>
+                    <a id="sromo-link" href="https://web.whatsapp.com/send?phone=593993071846" target="_blank" onmouseover="this.style.color='orange'" onmouseout="this.style.color='blue'">sromo6339@gmail.com</a>
+                    
+
+                    
+        
+                </footer>      
+        
+        </footer>
+        
+        <img src="lol.png" alt="Descripción" class="imagen-nueva">
+
+
+    <style>
+
+.imagen-nueva {
+    display: block;
+            width: 40px; /* Ajusta este valor según el tamaño deseado */
+            height: auto; /* Mantiene la proporción de la imagen */
+            bottom: -933px; /* Ajusta este valor para mover el pie de página por encima del carrusel */
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            text-align: center;
+    }
+        /* imágenes como carrusel */
+        /* body pra q se acomode todo al escritorio de la pantalla */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            overflow-x: hidden;
+        }
+/*hasta aqui para llene todos los espacio del escritorio*/
+        ul {
+            display: flex;
+            flex-wrap: nowrap;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Ajusta la altura del contenedor */
+    overflow: hidden; /* Evita el desbordamiento de contenido */
+    margin: 0;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    position: relative;
+    width: 40%; /* Ajusta el ancho de cada elemento */
+    height: 85%; /* Ajusta la altura de cada elemento */
+    border-right: 1px solid #FFF;
+    float: left;
+    box-sizing: border-box;
+    transition: 0.5s;
+    text-align: center;
+    overflow: hidden;
+    margin-top: -25px; /* Añade esta línea para bajar los elementos */
+    left: 10px; /* Ajusta este valor para mover la imagen hacia la derecha */
+  justify-content: center;
+
+    
+}
+
+        ul li:nth-child(1) {
+            background-image: url("peguche.jpg"); /* Usamos url() para definir la imagen de fondo */
+            background-size: cover;
+            background-position: left top;
+        }
+
+        ul li:nth-child(2) {
+    background-image: url("mojanda.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+       }
+
+  
+       ul li:nth-child(3) {
+    background-image: url("pablo.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+}
+
+
+ul li:nth-child(4) {
+    background-image: url("lechero.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+}
+
+ul li:nth-child(5) {
+    background-image: url("taxopamba.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+}
+
+ul li:nth-child(6) {
+    background-image: url("poncho.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+}
+
+ul li:nth-child(7) {
+    background-image: url("condor.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+}
+ul li:nth-child(8) {
+    background-image: url("yamor.jpg"); /* Usamos url() para definir la imagen de fondo */
+    background-size: cover;
+    background-position: left top;
+}
+
+
+        ul:hover li {
+            width: 10%;
+        }
+
+        ul li:hover {
+            width: 60%;
+        }
+
+        ul li .content {
+            position: absolute;
+            bottom: -100%;
+            left: 0;
+            height: 60%;
+            width: 100%;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+            color: #FFF;
+            opacity: 1;
+        }
+
+        ul li .content h2 {
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        ul li .content p {
+            width: 70%;
+            margin: auto;
+            margin-top: 0px;
+        }
+
+        ul li:hover .content {
+            bottom: 0;
+            transition: 0.5s;
+            transition-delay: 0.5s;
+        }
+
+        /* para punto */
+        .punto::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: black;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+
+
+        /*diseño para titulo*/
+        body.not-loaded h2 {
+    opacity: 0;
+    transform: translateY(-20px); /* Ajusta según la animación deseada */
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+body h2 {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+        /*diseño para enlaces  no se pierdan por culpa del carrusel imagenes */
+        .nav-link {
+    font-size: 18px;
+    text-decoration: none;
+    margin: 0 40px; /* Añade espacio entre los enlaces */
+    position: relative;
+    z-index: 2; /* Asegura que los enlaces estén sobre la imagen */
+}
+
+/*titulo*/
+
+
+:root {
+            --primary-color: #fff; /* Escoge el color que desees */
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: rgb(44, 13, 13);
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-top: 20vh;
+            margin-top: 10px; /* Añade esta línea para bajar los elementos */
+            color: blue;
+            font-size: 2.5em;
+
+
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <h2> </h2>
+    <ul>
+        <li>
+            <div class="content">
+                <span>CASCADA DE PEGUCHE</span>
+                <p>
+                    La Cascada de Peguche es un área ambiental recreativa, conformada por el bosque protector,
+                    con una extensión de 40 hectáreas, referente turístico por su atractivo, valor patrimonial y nivel de aceptación de visitantes,
+                    turistas y excursionistas. De las 40 hectáreas,
+                    25 comprenden el sector de vivienda comunal de la antigua hacienda QuinchuquíPeguche,
+                    y las 15 restantes, corresponden a la declaratoria de Bosque Protector.
+                    <br> Las actividades que más se realizan son:<br>
+                    * Caminatas<br>
+                    * Camping<br>
+                    * Descanso<br>
+                    * Paseos<br>
+                    * Actividades de aventura<br>
+                    En 1994, recibió la denominación de área protegida.
+                </p>
+            </div>
+        </li>
+        <li>
+            <div class="content">
+                <span>LAGUNAS DE MOJANDA</span>
+                <p>
+                    Las Lagunas de Mojanda son un complejo lacustre conformado por tres lagunas rodeadas de páramos y bosques nativos,
+                    que ofrece uno de los escenarios más hermosos y naturales de Otavalo que son:<br>
+                   
+                    * La primera y más grande conocida como Caricocha o laguna macho que es origen volcánico, junto a esta laguna están otras dos más pequeñas.
+                    <br>* La Huarmicocha o laguna hembra y la Yanacocha o laguna negra, todas ellas lograrán transmitirle la tranquilidad de sus aguas y la vida de su entorno.
+                    <br> * Este lugar es un popular destino turístico por su belleza paisajística y la posibilidad de realizar actividades como caminatas, observación de aves y fotografía.
+                   
+                    <br> Las actividades que más se realizan son:<br>
+                    * Caminatas<sr>
+                    * Cabalgatas<sr>
+                    * Fotografía<br><sr>
+                    * Picnic<sr>
+                    * Pesca de truchas en la laguna<sr>
+                    <br>* Actividades de aventura<br>
+                   
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="content">
+                <span>  LAGO SAN PABLO </span>
+                <p>
+                    La laguna San Pablo, que se encuentra a los pies del majestuoso volcán Imbabura, las parroquias como: Gonzáles SuárezSan Pablo, San Rafael y sus respectivas comunidades se encuencta cerca de la laguna de San Pablo. 
+                    Una de las comunidades es Araque. <br>
+                    En donde encontraremos el Parque Acuático, lugar en donde nos ofrecen recorridos  como  :
+                    <br>*Paseos en lanchas 
+                    <br>*Caminatas
+                    <br>*Actividades de aventura
+                    <br> *variedad de platos típicos de la zona 
+                    
+                   
+                </p>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="content">
+                <span>MIRADOR EL LECHERO</span>
+                <p>
+                    El Árbol del Lechero, considerado milenario, se ubica en Pucará de Rey Loma a 2847 m.s.n.m. con temperatura promedio de 12°C. Rodeado de bosques de eucaliptos y pinos, alberga aves propias de la región interandina como gorriones, mirlos, huiracchuros, quilicos, quindes. Constituye un mirador natural desde donde se observa la laguna de San pablo, el volcán Imbabura, Otavalo, la montaña Fuya Fuya y el volcán Cotacachi.
+                    Desde la tradición indígena, es un sitio sagrado donde se realizan rituales de purificación entre indígenas del Ecuador y del mundo.              
+                </p>
+            </div>
+        </li>
+
+
+        <li>
+            <div class="content">
+                <span>CASCADAS DE TAXOPAMBA</span>
+                <p>
+                    Esta cascada está formada por 2 saltos, el primer salto es de 15 m, en donde forma un vado pequeño de 1 m y el segundo salto es de 10 m con un ancho de 1.50 m y forma un segundo vado de 8 m.
+
+                   <br> Las aguas de esta cascada son transparentes y sin turbiedad y tiene una temperatura de 9°C.
+                    
+                   <br>La zona de la cascada se encuentra rodeada de vegetación natural y en el camino hasta ella encontraremos cultivos de los habitantes de la zona.   
+                    
+                </p>
+            </div>
+        </li>
+       
+        
+        <li>
+            <div class="content">
+                <span>PLAZA DE LOS PONCHOS DE OTAVALO</span>
+                <p>
+                    El mercado indígena artesanal en Otavalo, también conocido como Mercado Centenario, es un lugar donde se pueden conseguir diferentes productos artesanales de la región, a nivel nacional e internacional.
+                     Los textiles de Otavalo son su bandera de producción artesanal, sin embargo, también se ofrecen otro tipo de productos realizados en madera, obras de arte con cerámica, madera, pintura, metal, entre otros.           
+
+
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="content">
+                <span>PARQUE CÓNDOR</span>
+                <p>
+                   El  Parque Cóndor contribuyendo a la conservación del cóndor andino, aves rapaces y promueve la investigación científica.
+
+                    <br>El Parque Cóndor cumple con las necesidades de las aves que lo ocupan, como cóndores, búhos, buitres, gavilanes, águilas y halcones. Cuenta con un área de vuelo donde las aves entrenadas son liberadas para cumplir su entrenamiento diario, baterías sanitarias y un área de juegos infantiles.
+                    
+
+                </p>
+            </div>
+        </li>
+
+        <li>
+            <div class="content">
+                <span>EL YAMOR </span>
+                <p>
+                
+Los meses de octubre y septiembre, coinciden con la cosecha del maíz, en los que se prepara el Yamor que es una chicha fermentada con bajo poder alcohólico. Se obtiene del fermento de los siete variedades de maíz que son amarillo, blanco, negro, chulpi, canguil, morocho y la jora, todo luego de un proceso de secado, molido y hervido.
+<br>Además del maíz, en el hervido intervienen algunas plantas aromáticas de la zona. Se acompaña esta bebida con un suculento plato de fritada con mote, tortillas y empanadas.
+   
+
+                </p>
+            </div>
+        </li>
+
+</body>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const text = "EXPLORA LA BELLEZA NATURAL DE OTAVALO";
+        const h2Element = document.querySelector('h2');
+        let index = 0;
+
+        function typeWriter() {
+            if (index < text.length) {
+                h2Element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        typeWriter();
+
+        const image = document.getElementById('imagen-centrada');
+        const listItems = document.querySelectorAll('ul li');
+
+        listItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                image.style.display = 'none';
+            });
+            item.addEventListener('mouseleave', function() {
+                image.style.display = 'block';
+            });
+        });
+    });
+</script>
+
+
+
+    <!-- Contenido principal -->
+    <div class="nav-bottom">
+        <div class="popup-whatsapp fadeIn">
+            <div class="content-whatsapp -top">
+                <button type="button" class="closePopup">
+                    <i class="material-icons icon-font-color">close</i>
+                </button> 
+                <p style="display: inline-block;">
+                    <img src="secretary.png" width="50" style="vertical-align: middle;">
+                    <span style="vertical-align: middle;">Hola, ¿en qué podemos ayudarle?</span>
+                </p>
+            </div>
+            <div class="content-whatsapp -bottom">
+                <input class="whats-input" id="whats-in" type="text" Placeholder="Enviar mensaje..." />
+                <button class="send-msPopup" id="send-btn" type="button">
+                    <i class="material-icons icon-font-color--black">send</i>
+                </button>
+            </div>
+        </div>
+        <button type="button" id="whats-openPopup" class="whatsapp-button">
+            <div class="float">
+                <i class="fa fa-whatsapp my-float"></i>
+            </div>
+        </button>
+        <div class="circle-anime"></div>
+    </div>
+    
+
+
+
+    <script>
+        // Mostrar el mensaje de WhatsApp al hacer clic en el botón
+        document.getElementById('whats-openPopup').addEventListener('click', function() {
+            document.querySelector('.popup-whatsapp').style.display = 'block';
+        });
+    
+        // Ocultar el mensaje de WhatsApp al hacer clic en el botón de cerrar
+        document.querySelector('.closePopup').addEventListener('click', function() {
+            document.querySelector('.popup-whatsapp').style.display = 'none';
+        });
+    
+        // Enviar mensaje al hacer clic en el botón de enviar
+        document.querySelector('.send-msPopup').addEventListener('click', function() {
+            var message = document.getElementById('whats-in').value;
+            var phoneNumber = '593 98 281 9019'; // Número de teléfono del propietario
+    
+            // Verificar si se ha ingresado un mensaje
+            if (message.trim() === '') {
+                // Si no se ha ingresado ningún mensaje, abrir el enlace sin mensaje
+                window.open('https://wa.me/' + phoneNumber);
+            } else {
+                // Si se ha ingresado un mensaje, abrir el enlace con el mensaje
+                window.open('https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message));
+            }
+        });
+    </script>
+    
+    
+
+    <style>
+.imagen-centrada {
+            display: block;
+            width: 200px;
+             height: 200px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            left: 10px; /* Ajusta este valor para mover la imagen hacia la derecha */
+            z-index: 0; /* Asegura que la imagen esté detrás del texto */
+            
+
+        } 
+       
+
+
+    </style>
+
+
+       <body>
+      <img src="otta.jpg" alt="Descripción de la imagen" class="imagen-centrada">
+
+     </body>
+
+
+   </html>
+
+</html>
